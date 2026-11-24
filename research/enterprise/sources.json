@@ -1,0 +1,62 @@
+{
+  "docs.parquet": {
+    "url": "https://huggingface.co/datasets/Horizon-Labs/prompt-injection-eval-suite/resolve/d6dd8d499d0087661afd6cd7ecdfcf94a5af1c05/data/synthetic_docs_test.parquet",
+    "sha256": "bc7d4fd5430b3424f1b1271e57ca5c00da08d470a9eaa4399e04df67adafc23f"
+  },
+  "direct.parquet": {
+    "url": "https://huggingface.co/datasets/Horizon-Labs/prompt-injection-eval-suite/resolve/d6dd8d499d0087661afd6cd7ecdfcf94a5af1c05/data/synthetic_direct_test.parquet",
+    "sha256": "128a0a753375051ccdce82277f4ebcd72c9ff949432e97ada5a7749c26560ae9"
+  },
+  "agent-bench.jsonl": {
+    "url": "https://raw.githubusercontent.com/uninhibited-scholar/agent-safety-bench-zh/d38c7533685a1b02061b7a2354d5796cae05ce2b/data/bench.jsonl",
+    "sha256": "c748c8b38eb6f966c32ed1640ec337bcd2f02b593dbeba27fe9648e421de9933"
+  },
+  "tokenizer.json": {
+    "url": "https://huggingface.co/HikmaAI/hikmaai-mdeberta-v3-base-prompt-injection/resolve/b7d8317a617012d23713f4999acaba0690bc1c73/onnx/int8/tokenizer.json",
+    "sha256": "9ddbe35b768b22d6cd0d61a0a88ea3a188b7c00bbb7b825f9f247cf0b79c2365"
+  },
+  "detector.onnx": {
+    "url": "https://huggingface.co/HikmaAI/hikmaai-mdeberta-v3-base-prompt-injection/resolve/b7d8317a617012d23713f4999acaba0690bc1c73/onnx/int8/model_quantized.onnx",
+    "sha256": "546334b72f88a42d3a529ea651caf2ebe2404e554a3754cece9e55e56f813b84"
+  },
+  "legacy.jsonl": {
+    "url": "https://huggingface.co/datasets/JiachengWu591/zh-ipi-bench/resolve/29f870e3181a329251d9145cda0b60513dc188a0/data/v3.jsonl",
+    "sha256": "a6c9e50792b415d8cf1479b7873f9cceb36792ab701df2f92c1655a6450d1f48"
+  },
+  "external.jsonl": {
+    "url": "https://huggingface.co/datasets/WhitzardAgent/AgentSafety-All-in-One-Test-Case/resolve/080e55c78f27bb1576c4138b053cdd405bc3198f/prompt-injection/trans-prompt-injection/cases.jsonl",
+    "sha256": "e3497d7e7e68288059358d1c8cea606635b6ab6b8e2accd94cddfae78e7f1caf"
+  },
+  "xstest.csv": {
+    "url": "https://huggingface.co/datasets/Paul/XSTest/resolve/f600c994b256f12867dfa5b3eb3d545a3e62f8b5/xstest_prompts.csv",
+    "sha256": "11783fb294ed017473ee53c207d71f2161c7672c8d0b037501e78387f801cb5a"
+  },
+  "h-train.jsonl": {
+    "url": "https://huggingface.co/HikmaAI/hikmaai-mdeberta-v3-base-prompt-injection/resolve/b7d8317a617012d23713f4999acaba0690bc1c73/data/train.jsonl",
+    "sha256": "45e22da0d6f587e6353c6440d32df32da3ed49461b9e4f735705a0ce450c07c0"
+  },
+  "h-val.jsonl": {
+    "url": "https://huggingface.co/HikmaAI/hikmaai-mdeberta-v3-base-prompt-injection/resolve/b7d8317a617012d23713f4999acaba0690bc1c73/data/val.jsonl",
+    "sha256": "8d4b74608f097ceebaa0207c998e8ed5ab6f0e564a69656770f24a375788b378"
+  },
+  "h-test.jsonl": {
+    "url": "https://huggingface.co/HikmaAI/hikmaai-mdeberta-v3-base-prompt-injection/resolve/b7d8317a617012d23713f4999acaba0690bc1c73/data/test.jsonl",
+    "sha256": "8413897ad758f428e13370157cb429ac2b48c9357b406348ac6ac3802c502e67"
+  },
+  "ds-train.parquet": {
+    "url": "https://huggingface.co/datasets/deepset/prompt-injections/resolve/4f61ecb038e9c3fb77e21034b22511b523772cdd/data/train-00000-of-00001-9564e8b05b4757ab.parquet",
+    "sha256": "2e10bc7ab30f542c97e4e83e2a5683000b5057d25ec10908784c631d44124c04"
+  },
+  "ds-test.parquet": {
+    "url": "https://huggingface.co/datasets/deepset/prompt-injections/resolve/4f61ecb038e9c3fb77e21034b22511b523772cdd/data/test-00000-of-00001-701d16158af87368.parquet",
+    "sha256": "39ac797cabc157eeed58435a08593b2952bb6cb16fc394a2d383f447cc7b246e"
+  },
+  "ri-train.parquet": {
+    "url": "https://huggingface.co/datasets/rikka-snow/prompt-injection-multilingual/resolve/f1ad1f3dd44581f53a4c67e96a9dde2fb419ee5b/data/train-00000-of-00001.parquet",
+    "sha256": "91c3e5bd3611dae408a039ae078e49a43ed424116b0948602c63d4e291d8e1fd"
+  },
+  "ri-test.parquet": {
+    "url": "https://huggingface.co/datasets/rikka-snow/prompt-injection-multilingual/resolve/f1ad1f3dd44581f53a4c67e96a9dde2fb419ee5b/data/test-00000-of-00001.parquet",
+    "sha256": "1a818fe902cd698aae462ace939c3c886a7c0d3168f8babc09ab62a78ffb9d16"
+  }
+}

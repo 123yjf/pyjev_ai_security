@@ -1,0 +1,111 @@
+{
+  "candidate_rows": 455,
+  "gold_sha256": "959cbffa4fcc74e49fc7b74a2cf4cc056961c7a2e40bc8ce8d3c149931399e9c",
+  "inputs_sha256": "8736842b4c7b117a07aa78375296e28ac2235d73e2a5d2311c0151b95a68f718",
+  "inventory": {
+    "agent": {
+      "benign": 205,
+      "destructive": 142,
+      "prompt_injection": 153
+    },
+    "direct": {
+      "all": 3162,
+      "both_zh": 33,
+      "requested_zh": 60
+    },
+    "docs": {
+      "all": 3354,
+      "both_zh": 64,
+      "requested_zh": 66
+    }
+  },
+  "overlap": {
+    "excluded_prior": 0,
+    "internal_exact_rows": 0,
+    "reference": {
+      "ds-test": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 116
+      },
+      "ds-train": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 546
+      },
+      "external": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 353
+      },
+      "h-test": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 4220
+      },
+      "h-train": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 33905
+      },
+      "h-val": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 4208
+      },
+      "legacy": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 1556
+      },
+      "previous-business48": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 48
+      },
+      "pyjev-lessons": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 225
+      },
+      "pyjev-office": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 320
+      },
+      "ri-test": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 1276
+      },
+      "ri-train": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 6006
+      },
+      "xstest-safe": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 250
+      }
+    },
+    "retained_internal_near_pairs": 17
+  },
+  "retained_rows": 455,
+  "schema": 1,
+  "strata": {
+    "agent": 358,
+    "business_docs": 52,
+    "direct": 33,
+    "direct_attack": 15,
+    "direct_benign": 18,
+    "docs": 64,
+    "docs_clean": 21,
+    "docs_hard_benign": 22,
+    "docs_injected": 21,
+    "mention_or_quote": 16,
+    "positive_quote_marks": 18,
+    "quoted_design": 11,
+    "risk_discussion": 5
+  }
+}
