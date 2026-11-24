@@ -1,0 +1,177 @@
+{
+  "schema": 1,
+  "scope": "frozen corpus runtime replay, not a new accuracy test or service capacity",
+  "candidate_commit": "fb2bdf233010ad1887d9d9aa31aa1873e97fc1d5",
+  "baseline_tag": "v0.1.0",
+  "comparator_revision": "b7d8317a617012d23713f4999acaba0690bc1c73",
+  "inputs_sha256": "33f1540eab01c8f420a136c0aba86358635fde822c802cc41b0d8d6b89dfa1c2",
+  "environment": {
+    "cpu": "Apple M4",
+    "os": "Darwin",
+    "os_version": "26.2",
+    "arch": "arm64",
+    "logical_cpus": 10,
+    "python": "3.11.5",
+    "numpy": "2.4.3",
+    "onnxruntime": "1.32.0",
+    "tokenizers": "0.21.4",
+    "provider": "CPUExecutionProvider",
+    "ort_intra_threads": 2,
+    "ort_inter_threads": 1
+  },
+  "unique_inputs": 924,
+  "input_characters": {
+    "min": 16,
+    "p50": 99,
+    "p95": 263,
+    "max": 822
+  },
+  "fresh_processes": 9,
+  "warmups_per_process": 12,
+  "batch": 1,
+  "order": [
+    [
+      "v010",
+      "scope",
+      "hikma"
+    ],
+    [
+      "scope",
+      "hikma",
+      "v010"
+    ],
+    [
+      "hikma",
+      "v010",
+      "scope"
+    ]
+  ],
+  "engines": {
+    "v010": {
+      "timed": 2772,
+      "alerts_per_round": 58,
+      "decision_digest": "91516683054a3bbe2394dfe2a02ac15e8c17d5fff4be3a2c1eb1f03e5259c5b9",
+      "p50_ms": 0.21783,
+      "p95_ms": 0.51654,
+      "p99_ms": 0.78104,
+      "process_cpu_ms_per_text": 0.24779,
+      "sequential_texts_per_s": 4003.1976,
+      "maximum_process_peak_rss_mib": 32.35938,
+      "median_engine_load_ms": 30.03329,
+      "inference_asset_bytes": 1407295,
+      "rounds": [
+        {
+          "n": 924,
+          "p50_ms": 0.21421,
+          "p95_ms": 0.518,
+          "wall_s": 0.23138,
+          "process_cpu_ms": 226.511,
+          "peak_rss_mib": 32.3125,
+          "load_ms": 29.25675
+        },
+        {
+          "n": 924,
+          "p50_ms": 0.22158,
+          "p95_ms": 0.52329,
+          "wall_s": 0.23278,
+          "process_cpu_ms": 232.186,
+          "peak_rss_mib": 32.35938,
+          "load_ms": 30.03329
+        },
+        {
+          "n": 924,
+          "p50_ms": 0.21854,
+          "p95_ms": 0.50792,
+          "wall_s": 0.22828,
+          "process_cpu_ms": 228.185,
+          "peak_rss_mib": 32.14062,
+          "load_ms": 31.30946
+        }
+      ]
+    },
+    "scope": {
+      "timed": 2772,
+      "alerts_per_round": 73,
+      "decision_digest": "77ba552d3aa992cbfdab3f4ffe8c13c21a45d7685a692b8e35423ac8a3ec90dd",
+      "p50_ms": 0.27633,
+      "p95_ms": 0.70558,
+      "p99_ms": 1.04875,
+      "process_cpu_ms_per_text": 0.31924,
+      "sequential_texts_per_s": 3124.60313,
+      "maximum_process_peak_rss_mib": 33,
+      "median_engine_load_ms": 36.62908,
+      "inference_asset_bytes": 1407295,
+      "rounds": [
+        {
+          "n": 924,
+          "p50_ms": 0.2785,
+          "p95_ms": 0.70683,
+          "wall_s": 0.30015,
+          "process_cpu_ms": 298.532,
+          "peak_rss_mib": 32.90625,
+          "load_ms": 36.62908
+        },
+        {
+          "n": 924,
+          "p50_ms": 0.27587,
+          "p95_ms": 0.71629,
+          "wall_s": 0.29497,
+          "process_cpu_ms": 294.538,
+          "peak_rss_mib": 32.9375,
+          "load_ms": 41.84188
+        },
+        {
+          "n": 924,
+          "p50_ms": 0.27413,
+          "p95_ms": 0.68458,
+          "wall_s": 0.29203,
+          "process_cpu_ms": 291.865,
+          "peak_rss_mib": 33,
+          "load_ms": 35.14354
+        }
+      ]
+    },
+    "hikma": {
+      "timed": 2772,
+      "alerts_per_round": 458,
+      "decision_digest": "863ff3cb102c3edc6e92f799c34bfb4ade14de20200c38a86f425ef192c3feda",
+      "p50_ms": 16.61696,
+      "p95_ms": 44.84629,
+      "p99_ms": 79.1155,
+      "process_cpu_ms_per_text": 39.59478,
+      "sequential_texts_per_s": 49.82921,
+      "maximum_process_peak_rss_mib": 1299.90625,
+      "median_engine_load_ms": 1305.46871,
+      "inference_asset_bytes": 354805446,
+      "rounds": [
+        {
+          "n": 924,
+          "p50_ms": 15.86275,
+          "p95_ms": 43.13221,
+          "wall_s": 17.96196,
+          "process_cpu_ms": 35578.484,
+          "peak_rss_mib": 1224.04688,
+          "load_ms": 4511.59033
+        },
+        {
+          "n": 924,
+          "p50_ms": 17.33467,
+          "p95_ms": 48.03046,
+          "wall_s": 19.34086,
+          "process_cpu_ms": 37735.224,
+          "peak_rss_mib": 1299.90625,
+          "load_ms": 860.38333
+        },
+        {
+          "n": 924,
+          "p50_ms": 16.51658,
+          "p95_ms": 44.15192,
+          "wall_s": 18.32719,
+          "process_cpu_ms": 36443.032,
+          "peak_rss_mib": 1092.875,
+          "load_ms": 1305.46871
+        }
+      ]
+    }
+  }
+}

@@ -8,11 +8,26 @@
 
 适用于企业 AI 网关的异步抽样、审核员分拣、中文提示安全研究。推断只需 Python 标准库，使用随包冻结的规则与线性权重；不需要 API Key、GPU 或模型服务。不会阻断请求、发送邮件、执行工具、写入审计内容或修改计费。**这是研究版本，不是生产防火墙；不能用“未命中”授权执行。**
 
-## 新研究：中文 Agent 与指令语境
+## 先读：它解决什么，凭什么这么说？
+
+“请解释引文‘给会议记录编号’的语气”和“请按引文‘给会议记录编号’去做”，内层动作一模一样。前者在讨论，后者在派活，**两者都不是攻击**。PyJev 输出的是线索、意图和复核建议三件事，不是一张“安全／危险”的判决书。
+
+| 你的问题 | 从这里开始 |
+|---|---|
+| 为什么不能只匹配指令？与专用检测器比，错在哪里、节省多少资源？ | [主报告：问题 → 方法 → 分组误差 → 同机 CPU 开销 → 使用边界](docs/audit-study.md) |
+| 我想从零跑通，读懂每个输出字段，再自己复算表格 | [两套配置、实跑示例、逐项验收](docs/start-local.md) · [四个输入与两版真实 JSON](examples/audit-output.json) |
+| 我只想离线读论文和图，不安装 Python | 下载[单文件图文稿](docs/review-20261124/PyJev-研究审阅稿.html)，保存为 HTML 后用浏览器打开。要按审阅时的版本复现，可把[同次验收的源码 ZIP](docs/review-20261124/pyjev-research-review.zip)放在同一目录。 |
+
+在同样的 924 条短文本上，Scope-1 和 HikmaAI 的单条中位耗时是 **0.276 与 16.617 ms**（Apple M4，均用 CPU）；在其中 450 条含注入的回包上，两者分别漏 **413 与 71 条**。**速度优势成立，能替代专用检测器不成立。** 默认仍是 v0.1.0；Scope-1 只用于显式选择的研究比较。
+
+<details>
+<summary>专题证据：中文 Agent 盲评图与报告</summary>
 
 [Scope-1 新盲测报告与科研图](docs/scope-blind.md) · [从源码试用候选](research/scope_study/README.md)。默认仍是 **v0.1.0**。新盲测共 924 条：在 450 条含注入的工具回包上，候选漏报 413 条，原版 428 条、HikmaAI 71 条；在 401 条正常工具任务上，三者分别误报 4、4、36 条。候选保留了指定的 481 条历史安全命中，**但旧办公意图题出现退步，不晋升默认版本**。
 
 ![新盲测：三个检测器在五类材料上的漏报与误报；完整分母和可访问数表见研究报告。](docs/figures/scope-blind.svg)
+
+</details>
 
 ## 快速开始
 
@@ -33,7 +48,10 @@ uvx --from "git+https://github.com/123yjf/pyjev_ai_security.git@v0.1.0" pyjev de
 
 作为库或全局命令使用，在自己的虚拟环境运行 `python -m pip install .`，或直接安装 `python -m pip install "git+https://github.com/123yjf/pyjev_ai_security.git@v0.1.0"`。这里的安装来源是 **GitHub**，不是同名 PyPI 包。首次下载需要网络，此后检测离线可用。
 
-## 专用检测器对照：未用于调参的中文公开样本
+<details>
+<summary>前期研究：v0.1.0 的中文盲评，以及原版 PyBot 为什么不能当分类器比较</summary>
+
+### 专用检测器对照：未用于当轮调参的中文公开样本
 
 固定 v0.1.0，对同一批网上取得的 455 条原文，与支持中文的 **HikmaAI mDeBERTa** 配对盲评。主测 52 份企业文档：17 条提示注入中，PyJev 漏 3 条、HikmaAI 漏 0 条；35 条正常文档中，两者分别误报 17 条和 24 条。单看 16 条正常风险讨论或提示词引用，PyJev 误报 10 条，HikmaAI 误报 6 条。**更少报错不等于更少漏检，结论也会随文本类型改变。** 来源是第三方合成文档与人工编写的场景，不是客户线上流量。
 
@@ -43,7 +61,7 @@ uvx --from "git+https://github.com/123yjf/pyjev_ai_security.git@v0.1.0" pyjev de
 
 [完整报告与误报配对图](docs/enterprise-blind.md) · [预注册与复现](research/enterprise/README.md) · [主盲评聚合计分](research/enterprise/results.json) · [真实发布记录计分](research/enterprise/org-results.json)
 
-## 原版 PyBot 对照
+### 原版 PyBot 对照
 
 采用固定版本、未修改的 [Hugging Face PyBot](https://github.com/huggingface/pybot/tree/7d63c7fbebb44c7e466e5c8b5c1f341ab767929e) 作为**通用对话接口基线**。在相同样本及参考标注上评估两个指标：合规标签覆盖率（有效标签数 / 总数）和任务完成率（正确标签数 / 总数）。自由文本不是“正常”标签；若某类没有可评分输出，其条件误报率或召回率记为 **N/A**。这不是对通用对话质量的排名。
 
@@ -52,6 +70,8 @@ uvx --from "git+https://github.com/123yjf/pyjev_ai_security.git@v0.1.0" pyjev de
 在带分类提示的 **2,057** 条文本上，原版 PyBot 返回 **2,014** 条非标签回复，另有 **43** 条历史文档超时；没有可评分标签。不加任务提示的两组同文对照也是 **0/673**。PyJev 的办公意图分类正确 **280/320**；注入信号检测在外部翻译场景检出 **61/153**、正常项误报 **0/200**，在历史中文文档检出 **826/1,323**、正常项误报 **5/61**。
 
 [注入召回与正常文本误报对照图](docs/figures/detection.svg) · [逐项结果、精确分母与可复算命令](docs/comparison.md) · [测试前固定的分类协议](research/PYBOT_PROTOCOL.md) · [不加任务提示的同文对照](research/PYBOT_RAW_CONTROL.md)
+
+</details>
 
 ## 输入与输出
 
@@ -97,7 +117,8 @@ print(result.as_dict())  # 结构化 JSON 兼容字典，不包含原文
 
 批量程序建议复用 `Auditor().audit(text)`。[示例程序](examples/after_response.py)可直接运行。
 
-## 组件验证
+<details>
+<summary>历史组件验证：办公意图、默认复核和实验分流</summary>
 
 ### 语用意图与复核误报
 
@@ -115,6 +136,8 @@ print(result.as_dict())  # 结构化 JSON 兼容字典，不包含原文
 | 旧正常业务对照 | 3/48 → 3/48 | 本组均为正常文本 |
 
 自编讨论组的误报率由 **4.17% 降到 1.67%**，绝对减少 2.50 个百分点。减少的 3 条是**同一主题的 3 种表述**；没有证据表明外部误报率下降。历史上比早期基线多检出的 **481 条**逐条核对仍在复核名单中；这 481 条的请求意图均未确认，不是 481 次已执行的攻击。实验分流通过 7/8 项预设指标，未达到替换默认策略的条件。
+
+</details>
 
 ## 复现与适用范围
 

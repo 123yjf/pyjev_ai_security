@@ -4,6 +4,8 @@
 
 An offline, post-response text auditor for two separate tasks: identifying a possible prompt-injection signal and classifying the speech act toward a mentioned instruction. It distinguishes *discussing the instruction*, *asking the assistant to act*, and *insufficient context*. An action request need not be malicious. A text classification is not evidence that anything ran.
 
+Start with the [research argument and paired CPU/error measurements (Chinese)](docs/audit-study.md) or the [clean setup, real outputs and data replay (Chinese)](docs/start-local.md). For offline reading, download the [reviewed HTML](docs/review-20261124/PyJev-研究审阅稿.html) and the [matching source snapshot](docs/review-20261124/pyjev-research-review.zip). These materials add documentation and measurement tools, not a new default detector.
+
 ## New study: tool returns versus quoted instructions
 
 [Paired 924-text study and vector figures (Chinese)](docs/scope-blind.md) · [Run the research candidate](research/scope_study/README.md). Scope-1 missed 413/450 injected tool returns (v0.1.0: 428; HikmaAI: 71), while falsely flagging 4/401 ordinary agent tasks (v0.1.0: 4; HikmaAI: 36). It retained all 481 designated historical detections, but regressed on an older speech-act suite. **Opt-in research only. The default stays v0.1.0.**

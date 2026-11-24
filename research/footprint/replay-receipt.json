@@ -1,0 +1,33 @@
+{
+  "asset_counts": {
+    "current": {
+      "verified_cache": 27
+    },
+    "previous": {
+      "verified_cache": 17
+    }
+  },
+  "dependencies": {
+    "duckdb": "1.4.3",
+    "numpy": "2.4.3",
+    "onnxruntime": "1.32.0",
+    "tokenizers": "0.21.4"
+  },
+  "full_aggregate_matches_reference": true,
+  "gold_sha256": "c80aa7cebdcf42d2b84be81ff70ffd974e2acd709627df5c5562906797d2036d",
+  "inputs_sha256": "33f1540eab01c8f420a136c0aba86358635fde822c802cc41b0d8d6b89dfa1c2",
+  "isolated_python": true,
+  "optional_private_48_row_audit_used": false,
+  "original_trace_sql_and_envelope_check": true,
+  "prediction_bytes_match_reference": true,
+  "predictions_sha256": "07b1998d48e3a9d1098e28affb7690db77bc65f930f7b7e7735713e1c38c241c",
+  "python": "3.11.5",
+  "regenerated_inputs": 924,
+  "regenerated_previous_input_counts": [
+    455,
+    47
+  ],
+  "reused_prior_predictions": false,
+  "schema": 1,
+  "source_cache_only": true
+}
