@@ -1,0 +1,16 @@
+{
+  "inputs_sha256": "8736842b4c7b117a07aa78375296e28ac2235d73e2a5d2311c0151b95a68f718",
+  "max_tokens": 561,
+  "max_windows": 2,
+  "multiwindow": 6,
+  "predictions_sha256": "fb058e513f2af076d2bbbc319857b0d8ad096e4dabe64ed74f2cfbfaf7df4cf3",
+  "provider": "CPUExecutionProvider",
+  "rows": 455,
+  "schema": 1,
+  "versions": {
+    "numpy": "2.4.3",
+    "onnxruntime": "1.32.0",
+    "tokenizers": "0.21.4"
+  },
+  "windows": 461
+}

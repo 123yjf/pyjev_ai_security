@@ -1,0 +1,12 @@
+{
+  "0": {
+    "class1_at_half": 0,
+    "median_class1_probability": 0.0000030399195468124175,
+    "n": 16
+  },
+  "1": {
+    "class1_at_half": 16,
+    "median_class1_probability": 0.9999956075855163,
+    "n": 16
+  }
+}
