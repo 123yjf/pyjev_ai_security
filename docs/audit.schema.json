@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PyJev audit v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "signal",
+    "speech_act",
+    "review",
+    "experimental_review",
+    "execution_evidence",
+    "grants_authority",
+    "service_action",
+    "schema_version"
+  ],
+  "properties": {
+    "signal": {
+      "enum": [
+        "suspected",
+        "no_signal",
+        "unknown"
+      ]
+    },
+    "speech_act": {
+      "enum": [
+        "mention",
+        "act",
+        "unclear"
+      ]
+    },
+    "review": {
+      "enum": [
+        "review",
+        "no_signal",
+        "incomplete"
+      ]
+    },
+    "experimental_review": {
+      "enum": [
+        "review",
+        "record_only",
+        "no_signal",
+        "incomplete"
+      ]
+    },
+    "execution_evidence": {
+      "const": "not_observed"
+    },
+    "grants_authority": {
+      "const": false
+    },
+    "service_action": {
+      "const": "none"
+    },
+    "schema_version": {
+      "const": 1
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "signal": {
+            "const": "unknown"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "speech_act": {
+            "const": "unclear"
+          },
+          "review": {
+            "const": "incomplete"
+          },
+          "experimental_review": {
+            "const": "incomplete"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "signal": {
+            "const": "no_signal"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "review": {
+            "const": "no_signal"
+          },
+          "experimental_review": {
+            "const": "no_signal"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "signal": {
+            "const": "suspected"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "review": {
+            "const": "review"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "signal": {
+            "const": "suspected"
+          },
+          "speech_act": {
+            "const": "mention"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "experimental_review": {
+            "const": "record_only"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "signal": {
+            "const": "suspected"
+          },
+          "speech_act": {
+            "enum": [
+              "act",
+              "unclear"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "experimental_review": {
+            "const": "review"
+          }
+        }
+      }
+    }
+  ]
+}

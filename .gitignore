@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+.pytest_cache/
+.DS_Store
+.idea/
+.vscode/
+.env
+.env.*
+*.pem
+*.key
+research/private_data/
+research/outputs/

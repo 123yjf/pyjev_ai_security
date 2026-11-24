@@ -1,0 +1,12 @@
+include README.md README.en.md MODEL_CARD.md LICENSE NOTICE CONTRIBUTING.md SECURITY.md CITATION.cff
+recursive-include docs *.md
+include docs/audit.schema.json
+include docs/figures/baselines.svg docs/figures/detection.svg docs/figures/intent.svg docs/figures/false-reviews.svg
+recursive-include research *.py *.md
+include research/calibration.json research/signal-controls.json
+recursive-include examples *.py
+include examples/office.jsonl
+recursive-include tests *.py
+prune research/private_data
+prune research/outputs
+global-exclude *.py[cod] .DS_Store

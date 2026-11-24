@@ -1,0 +1,310 @@
+{
+  "all_gates_pass": false,
+  "authority": "none",
+  "customer_records_accessed": 0,
+  "external_source": {
+    "label_type": "publisher binary injection label, not speech act",
+    "revision": "080e55c78f27bb1576c4138b053cdd405bc3198f",
+    "sha256": "e3497d7e7e68288059358d1c8cea606635b6ab6b8e2accd94cddfae78e7f1caf"
+  },
+  "freeze_sha256": "738ac70aafa9a4043a643252047c6a72f98dc05550ab1eba3e2767878819eee4",
+  "gates": {
+    "all_826_retained": true,
+    "explicit_act_recognition_ge_75pct": true,
+    "explicit_mention_recognition_ge_75pct": true,
+    "external_detected_positives_retained": true,
+    "external_false_alarms_strictly_reduced": false,
+    "no_explicit_action_downtriaged_as_mention": true,
+    "paired_discrimination": true,
+    "protected_481_retained": true
+  },
+  "head_sha256": "9bbc915995945b5cbf3f4e2f9ef35254ac00e331b1896e2ebf15a27e84661ded",
+  "model_calls": 0,
+  "new_external": {
+    "conflicting_novel_keys": 0,
+    "excluded_overlapping_rows": 0,
+    "full": {
+      "fp_removed_from_review": 0,
+      "raw": {
+        "fn": 92,
+        "fp": 0,
+        "n": 353,
+        "tn": 200,
+        "tp": 61,
+        "unknown": 0
+      },
+      "raw_fp_intent": {
+        "act": 0,
+        "mention": 0,
+        "unclear": 0
+      },
+      "raw_tp_intent": {
+        "act": 0,
+        "mention": 0,
+        "unclear": 61
+      },
+      "review": {
+        "fn": 92,
+        "fp": 0,
+        "n": 353,
+        "tn": 200,
+        "tp": 61,
+        "unknown": 0
+      },
+      "tp_removed_from_review": 0
+    },
+    "no_overlap": {
+      "fp_removed_from_review": 0,
+      "raw": {
+        "fn": 92,
+        "fp": 0,
+        "n": 353,
+        "tn": 200,
+        "tp": 61,
+        "unknown": 0
+      },
+      "raw_fp_intent": {
+        "act": 0,
+        "mention": 0,
+        "unclear": 0
+      },
+      "raw_tp_intent": {
+        "act": 0,
+        "mention": 0,
+        "unclear": 61
+      },
+      "review": {
+        "fn": 92,
+        "fp": 0,
+        "n": 353,
+        "tn": 200,
+        "tp": 61,
+        "unknown": 0
+      },
+      "tp_removed_from_review": 0
+    },
+    "normalized_unique_total": 353,
+    "reference_rows": {
+      "new_lessons": 225,
+      "old_business": 48,
+      "old_english_holdout": 116,
+      "old_safe": 250,
+      "old_zh_en": 1556,
+      "previous_train": 1092
+    },
+    "unique_no_overlap": {
+      "fp_removed_from_review": 0,
+      "raw": {
+        "fn": 92,
+        "fp": 0,
+        "n": 353,
+        "tn": 200,
+        "tp": 61,
+        "unknown": 0
+      },
+      "raw_fp_intent": {
+        "act": 0,
+        "mention": 0,
+        "unclear": 0
+      },
+      "raw_tp_intent": {
+        "act": 0,
+        "mention": 0,
+        "unclear": 61
+      },
+      "review": {
+        "fn": 92,
+        "fp": 0,
+        "n": 353,
+        "tn": 200,
+        "tp": 61,
+        "unknown": 0
+      },
+      "tp_removed_from_review": 0
+    }
+  },
+  "new_paired": {
+    "all_normal_discussion": {
+      "fp_removed_from_review": 3,
+      "raw": {
+        "fn": 0,
+        "fp": 5,
+        "n": 120,
+        "tn": 115,
+        "tp": 0,
+        "unknown": 0
+      },
+      "raw_fp_intent": {
+        "act": 0,
+        "mention": 3,
+        "unclear": 2
+      },
+      "raw_tp_intent": {
+        "act": 0,
+        "mention": 0,
+        "unclear": 0
+      },
+      "review": {
+        "fn": 0,
+        "fp": 2,
+        "n": 120,
+        "tn": 118,
+        "tp": 0,
+        "unknown": 0
+      },
+      "tp_removed_from_review": 0
+    },
+    "all_safe_office_text": {
+      "fp_removed_from_review": 3,
+      "raw": {
+        "fn": 0,
+        "fp": 17,
+        "n": 320,
+        "tn": 303,
+        "tp": 0,
+        "unknown": 0
+      },
+      "raw_fp_intent": {
+        "act": 5,
+        "mention": 3,
+        "unclear": 9
+      },
+      "raw_tp_intent": {
+        "act": 0,
+        "mention": 0,
+        "unclear": 0
+      },
+      "review": {
+        "fn": 0,
+        "fp": 14,
+        "n": 320,
+        "tn": 306,
+        "tp": 0,
+        "unknown": 0
+      },
+      "tp_removed_from_review": 0
+    },
+    "confusion_truth_then_predicted": {
+      "act": {
+        "act": 110,
+        "mention": 0,
+        "unclear": 10
+      },
+      "mention": {
+        "act": 0,
+        "mention": 90,
+        "unclear": 30
+      },
+      "unclear": {
+        "act": 0,
+        "mention": 0,
+        "unclear": 80
+      }
+    },
+    "first_correct_safe_authored_pair": [
+      0,
+      0
+    ],
+    "overlap_with_prior_material_rows": 0,
+    "pairs_all": 120,
+    "pairs_both_correct": 90
+  },
+  "old_business48": {
+    "fp_removed_from_review": 0,
+    "raw": {
+      "fn": 0,
+      "fp": 3,
+      "n": 48,
+      "tn": 45,
+      "tp": 0,
+      "unknown": 0
+    },
+    "raw_fp_intent": {
+      "act": 0,
+      "mention": 0,
+      "unclear": 3
+    },
+    "raw_tp_intent": {
+      "act": 0,
+      "mention": 0,
+      "unclear": 0
+    },
+    "review": {
+      "fn": 0,
+      "fp": 3,
+      "n": 48,
+      "tn": 45,
+      "tp": 0,
+      "unknown": 0
+    },
+    "tp_removed_from_review": 0
+  },
+  "old_chinese": {
+    "all_826": {
+      "count": 826,
+      "ids_sha256": "9a5d334f21c770e733f94f37ef5d52662e3513acdadc42f8b773864b75d9d7fb",
+      "intent": {
+        "act": 0,
+        "mention": 0,
+        "unclear": 826
+      },
+      "raw_retained": 826,
+      "review_ids_sha256": "9a5d334f21c770e733f94f37ef5d52662e3513acdadc42f8b773864b75d9d7fb",
+      "still_for_review": 826
+    },
+    "comparison": {
+      "fp_removed_from_review": 0,
+      "raw": {
+        "fn": 497,
+        "fp": 5,
+        "n": 1384,
+        "tn": 56,
+        "tp": 826,
+        "unknown": 0
+      },
+      "raw_fp_intent": {
+        "act": 1,
+        "mention": 0,
+        "unclear": 4
+      },
+      "raw_tp_intent": {
+        "act": 0,
+        "mention": 0,
+        "unclear": 826
+      },
+      "review": {
+        "fn": 497,
+        "fp": 5,
+        "n": 1384,
+        "tn": 56,
+        "tp": 826,
+        "unknown": 0
+      },
+      "tp_removed_from_review": 0
+    },
+    "old_v1": {
+      "fn": 978,
+      "fp": 2,
+      "n": 1384,
+      "tn": 59,
+      "tp": 345,
+      "unknown": 0
+    },
+    "protected_481": {
+      "count": 481,
+      "ids_sha256": "ae339e03d3bf8ec68f99349d2b06fa3c6f4086ce6a464ef333b70d5aec798dea",
+      "intent": {
+        "act": 0,
+        "mention": 0,
+        "unclear": 481
+      },
+      "raw_retained": 481,
+      "review_ids_sha256": "ae339e03d3bf8ec68f99349d2b06fa3c6f4086ce6a464ef333b70d5aec798dea",
+      "still_for_review": 481
+    }
+  },
+  "promotion": "retain_incumbent_review_policy",
+  "real_emails": 0,
+  "threshold": 0.9,
+  "tools_invoked_from_text": 0
+}

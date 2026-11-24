@@ -1,0 +1,13 @@
+PyJev AI Security — an independent NuwaRouter research project
+Copyright 2026 PyJev AI Security contributors
+Project code and the distributed numerical parameter artifacts: Apache License, Version 2.0.
+Evaluation corpora are not redistributed. Their original notices and terms remain applicable.
+
+The base detector was fitted on the deepset/prompt-injections training data (dataset
+card: Apache-2.0) and aligned rows from rikka-snow/prompt-injection-multilingual
+(dataset card: MIT). The package contains hashed features and numerical parameters,
+not the source texts. The intent lessons and office exam were authored for this project.
+See research/README.md for upstream authors, pinned revisions and evaluation-only sources.
+
+The terminal interface is inspired by Hugging Face's PyBot. PyJev is not a PyBot fork
+or an official Hugging Face or Jev product. No third-party chatbot code is included.

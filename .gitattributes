@@ -1,0 +1,4 @@
+* text=auto eol=lf
+pyjev/data/rulebook.json linguist-generated=true
+pyjev/data/head.json linguist-generated=true
+docs/figures/*.svg linguist-generated=true

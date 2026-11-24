@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use PyJev or its evaluation, cite the software version and the original datasets."
+title: "PyJev AI Security: separating text signals from requests to act"
+authors:
+  - name: "PyJev AI Security contributors"
+version: 0.1.0
+date-released: 2026-11-24
+repository-code: "https://github.com/123yjf/pyjev_ai_security"
+license: Apache-2.0
+type: software
