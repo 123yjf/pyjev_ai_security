@@ -1,0 +1,625 @@
+{
+  "blind_inputs": 924,
+  "groups": {
+    "agent_task": {
+      "modes": {
+        "hikma": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 0,
+          "fp": 36,
+          "tn": 365,
+          "tp": 0
+        },
+        "hikma_sensitive": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 0,
+          "fp": 46,
+          "tn": 355,
+          "tp": 0
+        },
+        "scope": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 0,
+          "fp": 4,
+          "tn": 397,
+          "tp": 0
+        },
+        "scope_active": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 0,
+          "fp": 4,
+          "tn": 397,
+          "tp": 0
+        },
+        "v010": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 0,
+          "fp": 4,
+          "tn": 397,
+          "tp": 0
+        }
+      },
+      "negative": 401,
+      "paired": {
+        "formerly_correct_normal_retained": 397,
+        "fp_added": 0,
+        "fp_removed": 0,
+        "fp_retained": 4,
+        "tp_gained": 0,
+        "tp_lost": 0,
+        "tp_retained": 0
+      },
+      "positive": 0,
+      "rows": 401,
+      "scope_routes": {
+        "no_signal": 393,
+        "record_only": 4,
+        "review": 4
+      }
+    },
+    "guide_all": {
+      "modes": {
+        "hikma": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 0,
+          "fp": 24,
+          "tn": 24,
+          "tp": 0
+        },
+        "hikma_sensitive": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 0,
+          "fp": 28,
+          "tn": 20,
+          "tp": 0
+        },
+        "scope": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 0,
+          "fp": 26,
+          "tn": 22,
+          "tp": 0
+        },
+        "scope_active": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 0,
+          "fp": 26,
+          "tn": 22,
+          "tp": 0
+        },
+        "v010": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 0,
+          "fp": 31,
+          "tn": 17,
+          "tp": 0
+        }
+      },
+      "negative": 48,
+      "paired": {
+        "formerly_correct_normal_retained": 17,
+        "fp_added": 0,
+        "fp_removed": 5,
+        "fp_retained": 26,
+        "tp_gained": 0,
+        "tp_lost": 0,
+        "tp_retained": 0
+      },
+      "positive": 0,
+      "rows": 48,
+      "scope_routes": {
+        "no_signal": 14,
+        "record_only": 8,
+        "review": 26
+      }
+    },
+    "guide_discussion": {
+      "modes": {
+        "hikma": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 0,
+          "fp": 19,
+          "tn": 8,
+          "tp": 0
+        },
+        "hikma_sensitive": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 0,
+          "fp": 21,
+          "tn": 6,
+          "tp": 0
+        },
+        "scope": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 0,
+          "fp": 16,
+          "tn": 11,
+          "tp": 0
+        },
+        "scope_active": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 0,
+          "fp": 16,
+          "tn": 11,
+          "tp": 0
+        },
+        "v010": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 0,
+          "fp": 18,
+          "tn": 9,
+          "tp": 0
+        }
+      },
+      "negative": 27,
+      "paired": {
+        "formerly_correct_normal_retained": 9,
+        "fp_added": 0,
+        "fp_removed": 2,
+        "fp_retained": 16,
+        "tp_gained": 0,
+        "tp_lost": 0,
+        "tp_retained": 0
+      },
+      "positive": 0,
+      "rows": 27,
+      "scope_routes": {
+        "no_signal": 8,
+        "record_only": 3,
+        "review": 16
+      }
+    },
+    "guide_quote": {
+      "modes": {
+        "hikma": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 0,
+          "fp": 5,
+          "tn": 16,
+          "tp": 0
+        },
+        "hikma_sensitive": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 0,
+          "fp": 7,
+          "tn": 14,
+          "tp": 0
+        },
+        "scope": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 0,
+          "fp": 10,
+          "tn": 11,
+          "tp": 0
+        },
+        "scope_active": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 0,
+          "fp": 10,
+          "tn": 11,
+          "tp": 0
+        },
+        "v010": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 0,
+          "fp": 13,
+          "tn": 8,
+          "tp": 0
+        }
+      },
+      "negative": 21,
+      "paired": {
+        "formerly_correct_normal_retained": 8,
+        "fp_added": 0,
+        "fp_removed": 3,
+        "fp_retained": 10,
+        "tp_gained": 0,
+        "tp_lost": 0,
+        "tp_retained": 0
+      },
+      "positive": 0,
+      "rows": 21,
+      "scope_routes": {
+        "no_signal": 6,
+        "record_only": 5,
+        "review": 10
+      }
+    },
+    "incident_description": {
+      "modes": {
+        "hikma": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 3,
+          "fp": 0,
+          "tn": 2,
+          "tp": 5
+        },
+        "hikma_sensitive": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 3,
+          "fp": 0,
+          "tn": 2,
+          "tp": 5
+        },
+        "scope": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 2,
+          "fp": 0,
+          "tn": 2,
+          "tp": 6
+        },
+        "scope_active": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 7,
+          "fp": 0,
+          "tn": 2,
+          "tp": 1
+        },
+        "v010": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 7,
+          "fp": 0,
+          "tn": 2,
+          "tp": 1
+        }
+      },
+      "negative": 2,
+      "paired": {
+        "formerly_correct_normal_retained": 2,
+        "fp_added": 0,
+        "fp_removed": 0,
+        "fp_retained": 0,
+        "tp_gained": 5,
+        "tp_lost": 0,
+        "tp_retained": 1
+      },
+      "positive": 8,
+      "rows": 10,
+      "scope_routes": {
+        "case_review": 5,
+        "no_signal": 4,
+        "review": 1
+      }
+    },
+    "operative_material": {
+      "modes": {
+        "hikma": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 71,
+          "fp": 74,
+          "tn": 390,
+          "tp": 379
+        },
+        "hikma_sensitive": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 59,
+          "fp": 88,
+          "tn": 376,
+          "tp": 391
+        },
+        "scope": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 413,
+          "fp": 30,
+          "tn": 434,
+          "tp": 37
+        },
+        "scope_active": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 413,
+          "fp": 30,
+          "tn": 434,
+          "tp": 37
+        },
+        "v010": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 428,
+          "fp": 35,
+          "tn": 429,
+          "tp": 22
+        }
+      },
+      "negative": 464,
+      "paired": {
+        "formerly_correct_normal_retained": 429,
+        "fp_added": 0,
+        "fp_removed": 5,
+        "fp_retained": 30,
+        "tp_gained": 15,
+        "tp_lost": 0,
+        "tp_retained": 22
+      },
+      "positive": 450,
+      "rows": 914,
+      "scope_routes": {
+        "no_signal": 835,
+        "record_only": 12,
+        "review": 67
+      }
+    },
+    "tool_clean": {
+      "modes": {
+        "hikma": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 0,
+          "fp": 14,
+          "tn": 1,
+          "tp": 0
+        },
+        "hikma_sensitive": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 0,
+          "fp": 14,
+          "tn": 1,
+          "tp": 0
+        },
+        "scope": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 0,
+          "fp": 0,
+          "tn": 15,
+          "tp": 0
+        },
+        "scope_active": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 0,
+          "fp": 0,
+          "tn": 15,
+          "tp": 0
+        },
+        "v010": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 0,
+          "fp": 0,
+          "tn": 15,
+          "tp": 0
+        }
+      },
+      "negative": 15,
+      "paired": {
+        "formerly_correct_normal_retained": 15,
+        "fp_added": 0,
+        "fp_removed": 0,
+        "fp_retained": 0,
+        "tp_gained": 0,
+        "tp_lost": 0,
+        "tp_retained": 0
+      },
+      "positive": 0,
+      "rows": 15,
+      "scope_routes": {
+        "no_signal": 15
+      }
+    },
+    "tool_injected": {
+      "modes": {
+        "hikma": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 71,
+          "fp": 0,
+          "tn": 0,
+          "tp": 379
+        },
+        "hikma_sensitive": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 59,
+          "fp": 0,
+          "tn": 0,
+          "tp": 391
+        },
+        "scope": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 413,
+          "fp": 0,
+          "tn": 0,
+          "tp": 37
+        },
+        "scope_active": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 413,
+          "fp": 0,
+          "tn": 0,
+          "tp": 37
+        },
+        "v010": {
+          "abstain_neg": 0,
+          "abstain_pos": 0,
+          "fn": 428,
+          "fp": 0,
+          "tn": 0,
+          "tp": 22
+        }
+      },
+      "negative": 0,
+      "paired": {
+        "formerly_correct_normal_retained": 0,
+        "fp_added": 0,
+        "fp_removed": 0,
+        "fp_retained": 0,
+        "tp_gained": 15,
+        "tp_lost": 0,
+        "tp_retained": 22
+      },
+      "positive": 450,
+      "rows": 450,
+      "scope_routes": {
+        "no_signal": 413,
+        "review": 37
+      }
+    }
+  },
+  "intent": {
+    "act": {
+      "base_speech": {
+        "act": 2,
+        "mention": 1,
+        "unclear": 18
+      },
+      "n": 21,
+      "scope_speech": {
+        "act": 8,
+        "mention": 1,
+        "unclear": 12
+      }
+    },
+    "ambiguous": {
+      "base_speech": {
+        "unclear": 3
+      },
+      "n": 3,
+      "scope_speech": {
+        "unclear": 3
+      }
+    },
+    "mention": {
+      "base_speech": {
+        "unclear": 48
+      },
+      "n": 48,
+      "scope_speech": {
+        "act": 4,
+        "mention": 18,
+        "unclear": 26
+      }
+    }
+  },
+  "intent_by_material": {
+    "agent_task": {
+      "act": {
+        "base_speech": {
+          "act": 2,
+          "mention": 1,
+          "unclear": 18
+        },
+        "n": 21,
+        "scope_speech": {
+          "act": 8,
+          "mention": 1,
+          "unclear": 12
+        }
+      },
+      "ambiguous": {
+        "base_speech": {
+          "unclear": 3
+        },
+        "n": 3,
+        "scope_speech": {
+          "unclear": 3
+        }
+      },
+      "mention": {
+        "base_speech": {},
+        "n": 0,
+        "scope_speech": {}
+      }
+    },
+    "guide_discussion": {
+      "act": {
+        "base_speech": {},
+        "n": 0,
+        "scope_speech": {}
+      },
+      "ambiguous": {
+        "base_speech": {},
+        "n": 0,
+        "scope_speech": {}
+      },
+      "mention": {
+        "base_speech": {
+          "unclear": 27
+        },
+        "n": 27,
+        "scope_speech": {
+          "act": 3,
+          "mention": 10,
+          "unclear": 14
+        }
+      }
+    },
+    "guide_quote": {
+      "act": {
+        "base_speech": {},
+        "n": 0,
+        "scope_speech": {}
+      },
+      "ambiguous": {
+        "base_speech": {},
+        "n": 0,
+        "scope_speech": {}
+      },
+      "mention": {
+        "base_speech": {
+          "unclear": 21
+        },
+        "n": 21,
+        "scope_speech": {
+          "act": 1,
+          "mention": 8,
+          "unclear": 12
+        }
+      }
+    }
+  },
+  "tool_template_misses": {
+    "hikma": {
+      "den_each": 30,
+      "max_fn": 19,
+      "median_fn": 3,
+      "min_fn": 0,
+      "templates": 15
+    },
+    "scope": {
+      "den_each": 30,
+      "max_fn": 29,
+      "median_fn": 29,
+      "min_fn": 7,
+      "templates": 15
+    },
+    "v010": {
+      "den_each": 30,
+      "max_fn": 30,
+      "median_fn": 30,
+      "min_fn": 8,
+      "templates": 15
+    }
+  }
+}

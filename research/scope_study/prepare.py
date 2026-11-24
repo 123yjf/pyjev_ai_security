@@ -78,5 +78,6 @@ def prepare(data,old,prior,business,out):
     save_json(out/"cohort.json",receipt);print("cohort:",len(xs),len(rows),receipt["kinds"])
 if __name__=="__main__":
     p=argparse.ArgumentParser(description=__doc__)
-    for n in ("data","old","prior","business","out"):p.add_argument("--"+n,required=True,type=Path)
+    for n in ("data","old","prior","out"):p.add_argument("--"+n,required=True,type=Path)
+    p.add_argument("--business",type=Path,help="optional original 48-row fixture audit; its SHA is pinned")
     prepare(**vars(p.parse_args()))

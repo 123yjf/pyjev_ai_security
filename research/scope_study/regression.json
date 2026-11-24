@@ -1,0 +1,492 @@
+{
+  "agent": {
+    "modes": {
+      "hikma": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 4,
+        "fp": 101,
+        "tn": 104,
+        "tp": 149
+      },
+      "hikma_sensitive": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 3,
+        "fp": 111,
+        "tn": 94,
+        "tp": 150
+      },
+      "scope": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 140,
+        "fp": 0,
+        "tn": 205,
+        "tp": 13
+      },
+      "scope_active": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 148,
+        "fp": 0,
+        "tn": 205,
+        "tp": 5
+      },
+      "v010": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 147,
+        "fp": 0,
+        "tn": 205,
+        "tp": 6
+      }
+    },
+    "negative": 205,
+    "paired": {
+      "formerly_correct_normal_retained": 205,
+      "fp_added": 0,
+      "fp_removed": 0,
+      "fp_retained": 0,
+      "tp_gained": 7,
+      "tp_lost": 0,
+      "tp_retained": 6
+    },
+    "positive": 153,
+    "rows": 358,
+    "scope_routes": {
+      "case_review": 8,
+      "no_signal": 344,
+      "record_only": 1,
+      "review": 5
+    }
+  },
+  "all455": {
+    "modes": {
+      "hikma": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 6,
+        "fp": 129,
+        "tn": 137,
+        "tp": 183
+      },
+      "hikma_sensitive": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 5,
+        "fp": 142,
+        "tn": 124,
+        "tp": 184
+      },
+      "scope": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 148,
+        "fp": 22,
+        "tn": 244,
+        "tp": 41
+      },
+      "scope_active": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 158,
+        "fp": 21,
+        "tn": 245,
+        "tp": 31
+      },
+      "v010": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 155,
+        "fp": 24,
+        "tn": 242,
+        "tp": 34
+      }
+    },
+    "negative": 266,
+    "paired": {
+      "formerly_correct_normal_retained": 242,
+      "fp_added": 0,
+      "fp_removed": 2,
+      "fp_retained": 22,
+      "tp_gained": 7,
+      "tp_lost": 0,
+      "tp_retained": 34
+    },
+    "positive": 189,
+    "rows": 455,
+    "scope_routes": {
+      "case_review": 11,
+      "no_signal": 374,
+      "record_only": 18,
+      "review": 52
+    }
+  },
+  "business_docs": {
+    "modes": {
+      "hikma": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 0,
+        "fp": 24,
+        "tn": 11,
+        "tp": 17
+      },
+      "hikma_sensitive": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 0,
+        "fp": 27,
+        "tn": 8,
+        "tp": 17
+      },
+      "scope": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 3,
+        "fp": 17,
+        "tn": 18,
+        "tp": 14
+      },
+      "scope_active": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 4,
+        "fp": 16,
+        "tn": 19,
+        "tp": 13
+      },
+      "v010": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 3,
+        "fp": 17,
+        "tn": 18,
+        "tp": 14
+      }
+    },
+    "negative": 35,
+    "paired": {
+      "formerly_correct_normal_retained": 18,
+      "fp_added": 0,
+      "fp_removed": 0,
+      "fp_retained": 17,
+      "tp_gained": 0,
+      "tp_lost": 0,
+      "tp_retained": 14
+    },
+    "positive": 17,
+    "rows": 52,
+    "scope_routes": {
+      "case_review": 2,
+      "no_signal": 12,
+      "record_only": 9,
+      "review": 29
+    }
+  },
+  "external": {
+    "base_fn": 92,
+    "base_tn": 200,
+    "base_tp": 61,
+    "negative": 200,
+    "positive": 153,
+    "rows": 353,
+    "scope_fn": 92,
+    "scope_tn": 200,
+    "scope_tp": 61,
+    "tp_gained": 0,
+    "tp_lost": 0
+  },
+  "legacy": {
+    "base_fn": 497,
+    "base_fp": 5,
+    "base_tn": 56,
+    "base_tp": 826,
+    "negative": 61,
+    "positive": 1323,
+    "rows": 1384,
+    "scope_fn": 489,
+    "scope_fp": 5,
+    "scope_tn": 56,
+    "scope_tp": 834,
+    "tp_gained": 8,
+    "tp_lost": 0
+  },
+  "mention_or_quote": {
+    "modes": {
+      "hikma": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 0,
+        "fp": 6,
+        "tn": 10,
+        "tp": 0
+      },
+      "hikma_sensitive": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 0,
+        "fp": 6,
+        "tn": 10,
+        "tp": 0
+      },
+      "scope": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 0,
+        "fp": 8,
+        "tn": 8,
+        "tp": 0
+      },
+      "scope_active": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 0,
+        "fp": 7,
+        "tn": 9,
+        "tp": 0
+      },
+      "v010": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 0,
+        "fp": 10,
+        "tn": 6,
+        "tp": 0
+      }
+    },
+    "negative": 16,
+    "paired": {
+      "formerly_correct_normal_retained": 6,
+      "fp_added": 0,
+      "fp_removed": 2,
+      "fp_retained": 8,
+      "tp_gained": 0,
+      "tp_lost": 0,
+      "tp_retained": 0
+    },
+    "positive": 0,
+    "rows": 16,
+    "scope_routes": {
+      "case_review": 1,
+      "no_signal": 1,
+      "record_only": 7,
+      "review": 7
+    }
+  },
+  "office320": {
+    "act": {
+      "base_correct": 110,
+      "previous_correct_lost": 20,
+      "previous_wrong_recovered": 0,
+      "rows": 120,
+      "scope_correct": 90
+    },
+    "mention": {
+      "base_correct": 90,
+      "previous_correct_lost": 0,
+      "previous_wrong_recovered": 10,
+      "rows": 120,
+      "scope_correct": 100
+    },
+    "unclear": {
+      "base_correct": 80,
+      "previous_correct_lost": 20,
+      "previous_wrong_recovered": 0,
+      "rows": 80,
+      "scope_correct": 60
+    }
+  },
+  "org47": {
+    "modes": {
+      "hikma": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 0,
+        "fp": 47,
+        "tn": 0,
+        "tp": 0
+      },
+      "hikma_sensitive": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 0,
+        "fp": 47,
+        "tn": 0,
+        "tp": 0
+      },
+      "scope": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 0,
+        "fp": 1,
+        "tn": 46,
+        "tp": 0
+      },
+      "scope_active": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 0,
+        "fp": 1,
+        "tn": 46,
+        "tp": 0
+      },
+      "v010": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 0,
+        "fp": 1,
+        "tn": 46,
+        "tp": 0
+      }
+    },
+    "negative": 47,
+    "paired": {
+      "formerly_correct_normal_retained": 46,
+      "fp_added": 0,
+      "fp_removed": 0,
+      "fp_retained": 1,
+      "tp_gained": 0,
+      "tp_lost": 0,
+      "tp_retained": 0
+    },
+    "positive": 0,
+    "rows": 47,
+    "scope_routes": {
+      "no_signal": 39,
+      "record_only": 7,
+      "review": 1
+    }
+  },
+  "protected_481": {
+    "cohort_sha256": "ae339e03d3bf8ec68f99349d2b06fa3c6f4086ce6a464ef333b70d5aec798dea",
+    "effective_kept": 481,
+    "kept_set_sha256": "ae339e03d3bf8ec68f99349d2b06fa3c6f4086ce6a464ef333b70d5aec798dea",
+    "missing": 0,
+    "raw_kept": 481,
+    "total": 481
+  },
+  "quoted_design": {
+    "modes": {
+      "hikma": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 0,
+        "fp": 4,
+        "tn": 7,
+        "tp": 0
+      },
+      "hikma_sensitive": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 0,
+        "fp": 4,
+        "tn": 7,
+        "tp": 0
+      },
+      "scope": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 0,
+        "fp": 5,
+        "tn": 6,
+        "tp": 0
+      },
+      "scope_active": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 0,
+        "fp": 5,
+        "tn": 6,
+        "tp": 0
+      },
+      "v010": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 0,
+        "fp": 7,
+        "tn": 4,
+        "tp": 0
+      }
+    },
+    "negative": 11,
+    "paired": {
+      "formerly_correct_normal_retained": 4,
+      "fp_added": 0,
+      "fp_removed": 2,
+      "fp_retained": 5,
+      "tp_gained": 0,
+      "tp_lost": 0,
+      "tp_retained": 0
+    },
+    "positive": 0,
+    "rows": 11,
+    "scope_routes": {
+      "record_only": 6,
+      "review": 5
+    }
+  },
+  "risk_discussion": {
+    "modes": {
+      "hikma": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 0,
+        "fp": 2,
+        "tn": 3,
+        "tp": 0
+      },
+      "hikma_sensitive": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 0,
+        "fp": 2,
+        "tn": 3,
+        "tp": 0
+      },
+      "scope": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 0,
+        "fp": 3,
+        "tn": 2,
+        "tp": 0
+      },
+      "scope_active": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 0,
+        "fp": 2,
+        "tn": 3,
+        "tp": 0
+      },
+      "v010": {
+        "abstain_neg": 0,
+        "abstain_pos": 0,
+        "fn": 0,
+        "fp": 3,
+        "tn": 2,
+        "tp": 0
+      }
+    },
+    "negative": 5,
+    "paired": {
+      "formerly_correct_normal_retained": 2,
+      "fp_added": 0,
+      "fp_removed": 0,
+      "fp_retained": 3,
+      "tp_gained": 0,
+      "tp_lost": 0,
+      "tp_retained": 0
+    },
+    "positive": 0,
+    "rows": 5,
+    "scope_routes": {
+      "case_review": 1,
+      "no_signal": 1,
+      "record_only": 1,
+      "review": 2
+    }
+  }
+}
