@@ -1,0 +1,10 @@
+{
+  "antd.md": {
+    "url": "https://raw.githubusercontent.com/ant-design/ant-design/3bf122d3e161717ad74f846c8b24a12705cf2cc9/CHANGELOG.zh-CN.md",
+    "sha256": "7bdece12a8e4a29d3c22a43eee0b42580a8f620158b319f7fb75fab0abe65ad7"
+  },
+  "tdesign.md": {
+    "url": "https://raw.githubusercontent.com/Tencent/tdesign-vue-next/b4e761f6599c11ca5565fe58a7bad3f08c4d51b9/packages/tdesign-vue-next/CHANGELOG.md",
+    "sha256": "4d624d0f181a046186d290144294ee2c86607a79d1e505be3f0d6279cb90fd41"
+  }
+}
