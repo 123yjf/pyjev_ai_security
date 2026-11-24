@@ -1,0 +1,18 @@
+{
+  "baseline": "b0d755fd2a3265f70bb4241b7126a3887035362d",
+  "candidate_commit": "fb2bdf233010ad1887d9d9aa31aa1873e97fc1d5",
+  "hikma": "b7d8317a617012d23713f4999acaba0690bc1c73",
+  "inputs_sha256": "33f1540eab01c8f420a136c0aba86358635fde822c802cc41b0d8d6b89dfa1c2",
+  "max_tokens": 351,
+  "max_windows": 1,
+  "multiwindow": 0,
+  "predictions_sha256": "07b1998d48e3a9d1098e28affb7690db77bc65f930f7b7e7735713e1c38c241c",
+  "provider": "CPUExecutionProvider",
+  "rows": 924,
+  "versions": {
+    "numpy": "2.4.3",
+    "onnxruntime": "1.32.0",
+    "tokenizers": "0.21.4"
+  },
+  "windows": 924
+}
