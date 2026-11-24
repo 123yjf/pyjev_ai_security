@@ -1,0 +1,160 @@
+{
+  "dify-llm.mdx": {
+    "url": "https://raw.githubusercontent.com/langgenius/dify-docs/b561103a404dc9f7bd6590a2cf9474e0fea318d6/zh/cloud/use-dify/nodes/llm.mdx",
+    "sha256": "4cd9d56d8dfac94df60ec5b7d8fbba69a0e759758571b51f4816ee0890b9d8fe"
+  },
+  "dify-agent.mdx": {
+    "url": "https://raw.githubusercontent.com/langgenius/dify-docs/b561103a404dc9f7bd6590a2cf9474e0fea318d6/zh/cloud/use-dify/nodes/agent.mdx",
+    "sha256": "21767a76c26d55ef1072d986b7e9ca1835bd6f86e1c7d93d682875913c1bf93d"
+  },
+  "dify-classify.mdx": {
+    "url": "https://raw.githubusercontent.com/langgenius/dify-docs/b561103a404dc9f7bd6590a2cf9474e0fea318d6/zh/cloud/use-dify/nodes/question-classifier.mdx",
+    "sha256": "863b7e24dc00d7dc9af120850a5b2b655d99bac841f4b7a81e0ef203bf927d37"
+  },
+  "dify-build.mdx": {
+    "url": "https://raw.githubusercontent.com/langgenius/dify-docs/b561103a404dc9f7bd6590a2cf9474e0fea318d6/zh/cloud/use-dify/build/new-agent/build.mdx",
+    "sha256": "475564f92c9e7898d1766d88cde16e72eeea72635b9be1946017b9e6b8f37661"
+  },
+  "owasp01.md": {
+    "url": "https://raw.githubusercontent.com/OWASP/www-project-top-10-for-large-language-model-applications/99f4395589bdbd120ae961f9cd179e79d7f9b27f/2_0_vulns/translations/zh-CN/LLM01_PromptInjection.md",
+    "sha256": "f6fa2e435b9ed132343827c33752e8136d69d562bb0664f2435c594789ad458f"
+  },
+  "guide-basics.mdx": {
+    "url": "https://raw.githubusercontent.com/dair-ai/Prompt-Engineering-Guide/57673726396dd94acb23bdb1e67f27c78ee85a8e/pages/introduction/basics.zh.mdx",
+    "sha256": "a457b3faf97ab293dda442d642e3fc3f43ed0a3fd032422594f3d96c19f61f9c"
+  },
+  "guide-elements.mdx": {
+    "url": "https://raw.githubusercontent.com/dair-ai/Prompt-Engineering-Guide/57673726396dd94acb23bdb1e67f27c78ee85a8e/pages/introduction/elements.zh.mdx",
+    "sha256": "fcd20b5886f20786491d736c24dbb91a98c30cfc5b7ed9f7cda8efcb06356a01"
+  },
+  "guide-tips.mdx": {
+    "url": "https://raw.githubusercontent.com/dair-ai/Prompt-Engineering-Guide/57673726396dd94acb23bdb1e67f27c78ee85a8e/pages/introduction/tips.zh.mdx",
+    "sha256": "54f8ff689a6b67ca488f508be061ffbb172581bfb430a2d687e1fb43e9a55c91"
+  },
+  "guide-examples.mdx": {
+    "url": "https://raw.githubusercontent.com/dair-ai/Prompt-Engineering-Guide/57673726396dd94acb23bdb1e67f27c78ee85a8e/pages/introduction/examples.zh.mdx",
+    "sha256": "05fca95157174bfba94c3a2a0ef27c80caa540b6b04102950ac14bb22940e764"
+  },
+  "guide-workplace.mdx": {
+    "url": "https://raw.githubusercontent.com/dair-ai/Prompt-Engineering-Guide/57673726396dd94acb23bdb1e67f27c78ee85a8e/pages/applications/workplace_casestudy.zh.mdx",
+    "sha256": "eaf9bbf009c67ead68357ab9bde232e6e629b2f0a763dc69286b4de8b0de312c"
+  },
+  "guide-function.mdx": {
+    "url": "https://raw.githubusercontent.com/dair-ai/Prompt-Engineering-Guide/57673726396dd94acb23bdb1e67f27c78ee85a8e/pages/applications/function_calling.zh.mdx",
+    "sha256": "a47c40ca91d18193d30ff2208eeb8917233a509b3d7b0c22b18db514f2c14294"
+  },
+  "guide-fewshot.mdx": {
+    "url": "https://raw.githubusercontent.com/dair-ai/Prompt-Engineering-Guide/57673726396dd94acb23bdb1e67f27c78ee85a8e/pages/techniques/fewshot.zh.mdx",
+    "sha256": "d6019adabb7fadd226b4fe951c7455731af814153715e86fa5142863cdecb373"
+  },
+  "guide-zeroshot.mdx": {
+    "url": "https://raw.githubusercontent.com/dair-ai/Prompt-Engineering-Guide/57673726396dd94acb23bdb1e67f27c78ee85a8e/pages/techniques/zeroshot.zh.mdx",
+    "sha256": "5a0a06c19a3207073e6a8269c9026de3bf081a176c8ac4589b4b08221c5b87ce"
+  },
+  "horizon-v2.parquet": {
+    "url": "https://huggingface.co/datasets/Horizon-Labs/prompt-injection-eval-suite/resolve/d6dd8d499d0087661afd6cd7ecdfcf94a5af1c05/data/synthetic_v2_test.parquet",
+    "sha256": "e8d4b34e5ff318e4a33c66f460f02bd070ecb747fc718ee941ff83e645febfef"
+  },
+  "reference-structure.py": {
+    "url": "https://raw.githubusercontent.com/Binye234/InjectAgent-CN/3ea919aabbccef58152117782c7174cced95244c/src/scenarios.py",
+    "sha256": "2fe0a71bc2d338f688dcb1f7eb73f10eaabece0c5e6ce8dd23db4300893f542b"
+  },
+  "injectagent-cn.jsonl": {
+    "url": "https://huggingface.co/datasets/WhitzardAgent/AgentSafety-All-in-One-Test-Case/resolve/080e55c78f27bb1576c4138b053cdd405bc3198f/prompt-injection/injectagent-cn/cases.jsonl",
+    "sha256": "356e37be1169cb45cb8ceb109a8b1610cb5d2e159e608e0e9abecfe6a66d0405"
+  },
+  "acebench-zh-agent.jsonl": {
+    "url": "https://huggingface.co/datasets/WhitzardAgent/AgentSafety-All-in-One-Test-Case/resolve/080e55c78f27bb1576c4138b053cdd405bc3198f/prompt-injection/acebench-zh-agent/cases.jsonl",
+    "sha256": "302cf8104a978c9ff229a907bb13026d642093136aefa2b16f79138aa6e4691b"
+  },
+  "231381878dce4bf8c3.article": {
+    "url": "https://aithreat.io/zh/cases/jqwik-agent-delete-output-instruction/",
+    "date": "2026-10-15",
+    "sha256": "88931a26283ec11a40da4bccc323f252cda6d94694b6cfaef3b6af406ea460eb",
+    "file": "231381878dce4bf8c3.article",
+    "category": 1,
+    "extraction": "JSON-LD Article.description (UTF-8)",
+    "license": "CC-BY-4.0"
+  },
+  "efb80b39f0e143c373.article": {
+    "url": "https://aithreat.io/zh/cases/macos-gaslight-llm-triage-spoof/",
+    "date": "2026-10-14",
+    "sha256": "cd34fdb40398f6a5e4af66cc640668f44fcc6facfffb37b795551ba67e899500",
+    "file": "efb80b39f0e143c373.article",
+    "category": 1,
+    "extraction": "JSON-LD Article.description (UTF-8)",
+    "license": "CC-BY-4.0"
+  },
+  "947bc7b203a8f77286.article": {
+    "url": "https://aithreat.io/zh/cases/anthropic-gtg-50020-sandbox-keys/",
+    "date": "2026-09-10",
+    "sha256": "617b68f390e31ebaa577bd0915d0587efef9ea431ee4df8d4ec4d62bf2c87469",
+    "file": "947bc7b203a8f77286.article",
+    "category": 1,
+    "extraction": "JSON-LD Article.description (UTF-8)",
+    "license": "CC-BY-4.0"
+  },
+  "2ae07f3c32d7d86861.article": {
+    "url": "https://aithreat.io/zh/cases/chatgpt-gmail-covert-channel/",
+    "date": "2026-09-08",
+    "sha256": "82511bc2f8ce4727d39998d728a1c6a4944f89cb20f47828fd0db9b189f1bd9d",
+    "file": "2ae07f3c32d7d86861.article",
+    "category": 1,
+    "extraction": "JSON-LD Article.description (UTF-8)",
+    "license": "CC-BY-4.0"
+  },
+  "91c1a4f6871cf19ae5.article": {
+    "url": "https://aithreat.io/zh/cases/brazil-court-prompt-injection-filing/",
+    "date": "2026-08-24",
+    "sha256": "6683b192491e1a3de65f98e15c4215b9c5f893ed7876e56f3f8e07bd62f13aab",
+    "file": "91c1a4f6871cf19ae5.article",
+    "category": 1,
+    "extraction": "JSON-LD Article.description (UTF-8)",
+    "license": "CC-BY-4.0"
+  },
+  "4a0d0a90cb0868a335.article": {
+    "url": "https://aithreat.io/zh/cases/copilot-searchleak/",
+    "date": "2026-06-15",
+    "sha256": "179ebc51df709aef86708b944fd3cde1a89c00fc11db0e95bac3e89f5edc099c",
+    "file": "4a0d0a90cb0868a335.article",
+    "category": 1,
+    "extraction": "JSON-LD Article.description (UTF-8)",
+    "license": "CC-BY-4.0"
+  },
+  "91aebd2ba14d0c07a9.article": {
+    "url": "https://aithreat.io/zh/cases/copilot-agentforce-injection/",
+    "date": "2026-04-15",
+    "sha256": "21eebaddebda443aacbb01c3ebbd81cbd974f403d284c58392f6fb6bb751d1f0",
+    "file": "91aebd2ba14d0c07a9.article",
+    "category": 1,
+    "extraction": "JSON-LD Article.description (UTF-8)",
+    "license": "CC-BY-4.0"
+  },
+  "bb692599f233038cc7.article": {
+    "url": "https://aithreat.io/zh/cases/grafanaghost/",
+    "date": "2026-04-07",
+    "sha256": "bbdd4d801ed8e129e25c35bd65dc3329d0aefb969098af5fdd787d79e531d2f4",
+    "file": "bb692599f233038cc7.article",
+    "category": 1,
+    "extraction": "JSON-LD Article.description (UTF-8)",
+    "license": "CC-BY-4.0"
+  },
+  "ad0ab541316d592b29.article": {
+    "url": "https://aithreat.io/zh/cases/claude-accessed-georgia-voter-data/",
+    "date": "2026-10-25",
+    "sha256": "feb6a367338174057d8e171516b79ca36841bdb723fb6295e7073933e0d38bfb",
+    "file": "ad0ab541316d592b29.article",
+    "category": 0,
+    "extraction": "JSON-LD Article.description (UTF-8)",
+    "license": "CC-BY-4.0"
+  },
+  "bdfafe010d54f588a4.article": {
+    "url": "https://aithreat.io/zh/cases/meta-muse-agent-leaks-home-address/",
+    "date": "2026-09-27",
+    "sha256": "35650b1fe0614f7ec0b82e9d54f9a4c0d46140830a4ac672eb80e82a408f7bfb",
+    "file": "bdfafe010d54f588a4.article",
+    "category": 0,
+    "extraction": "JSON-LD Article.description (UTF-8)",
+    "license": "CC-BY-4.0"
+  }
+}
