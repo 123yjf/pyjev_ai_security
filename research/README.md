@@ -14,6 +14,8 @@
 
 ## 数据与证据
 
+独立的[中文企业场景专用检测器盲评](enterprise/README.md)在 v0.1.0 固定后进行；与下表训练或既往复盘分开。[正文、图表和证据边界](../docs/enterprise-blind.md)。
+
 | 来源 | 用途 | 固定版本或校验 |
 |---|---|---|
 | [deepset/prompt-injections](https://huggingface.co/datasets/deepset/prompt-injections/tree/4f61ecb038e9c3fb77e21034b22511b523772cdd) | 原始信号层训练块 | 版本 `4f61ecb`；数据卡 Apache-2.0 |

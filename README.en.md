@@ -1,6 +1,6 @@
 # PyJev AI Security
 
-[中文](README.md) · [API contract](docs/contract.md) · [Model card](MODEL_CARD.md) · [Reproducibility](research/README.md) · [Original PyBot comparison](docs/comparison.md)
+[中文](README.md) · [API contract](docs/contract.md) · [Model card](MODEL_CARD.md) · [Reproducibility](research/README.md) · [Chinese specialist comparison](docs/enterprise-blind.md) · [Original PyBot comparison](docs/comparison.md)
 
 An offline, post-response text auditor for two separate tasks: identifying a possible prompt-injection signal and classifying the speech act toward a mentioned instruction. It distinguishes *discussing the instruction*, *asking the assistant to act*, and *insufficient context*. An action request need not be malicious. A text classification is not evidence that anything ran.
 
@@ -26,6 +26,8 @@ print(r.as_dict())
 Input: one authorized Unicode text, up to 32,768 characters. Output: `signal` (suspected / no_signal / unknown); `speech_act` (mention / act / unclear); `review` (the conservative route); `experimental_review` (shadow only); and constant boundaries `execution_evidence="not_observed"`, `grants_authority=false`, `service_action="none"`. There is no automatic blocking, email, persistence or external action. Use `scan - --json` for multiline standard input or `batch examples/office.jsonl` for one JSON object per line. `quiz` runs a short human exercise; `metrics` displays stored evidence and `doctor` verifies the assets.
 
 ## Results and interpretation
+
+**Frozen specialist comparison (455 paired Chinese texts).** On the primary 52 enterprise documents, PyJev v0.1.0 missed 3/17 injections versus 0/17 for HikmaAI mDeBERTa INT8 at 0.5. PyJev flagged 17/35 benign documents versus 24/35. Among 16 benign discussions of injection risk or quotations of prompts for review, the direction reversed: 10/16 false alerts for PyJev versus 6/16. On a separate context-only Agent scenario task, PyJev missed 147/153 source-labeled injection scenarios; these narratives are not equivalent to raw enterprise documents. The two external sources are public synthetic documents/queries and author-written scenarios, not customer traffic. The input/label hashes and prediction checksum were publicly committed in order; weights, thresholds and PyJev v0.1.0 were not changed. [Figures and paired errors](docs/enterprise-blind.md) · [English replay and provenance](research/enterprise/README.md).
 
 [Direct comparison with the unmodified original PyBot](docs/comparison.md) reports valid label coverage and correctly completed tasks across all examples. A free-form answer is **not** a benign verdict. Conditional error rates with no eligible denominator are undefined.
 

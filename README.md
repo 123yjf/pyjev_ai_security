@@ -2,7 +2,7 @@
 
 [![Test suite](https://github.com/123yjf/pyjev_ai_security/actions/workflows/test.yml/badge.svg)](https://github.com/123yjf/pyjev_ai_security/actions/workflows/test.yml)
 
-中文 · [English](README.en.md) · [输入输出规范](docs/contract.md) · [模型卡](MODEL_CARD.md) · [方法与数据](research/README.md) · [原版 PyBot 对照](docs/comparison.md)
+中文 · [English](README.en.md) · [输入输出规范](docs/contract.md) · [模型卡](MODEL_CARD.md) · [方法与数据](research/README.md) · [专用检测器中文盲评](docs/enterprise-blind.md) · [原版 PyBot 对照](docs/comparison.md)
 
 **用于事后审计的本地文本分类器。** 给定一段文本，PyJev 同时估计两个不同的属性：**提示注入信号**（是否需要人工复核）与**语用意图**（讨论或引用一条指令、请求执行、意图不明确）。文本分类不能证明工具已经执行。
 
@@ -26,6 +26,14 @@ uvx --from "git+https://github.com/123yjf/pyjev_ai_security.git@v0.1.0" pyjev de
 ~~~
 
 作为库或全局命令使用，在自己的虚拟环境运行 `python -m pip install .`，或直接安装 `python -m pip install "git+https://github.com/123yjf/pyjev_ai_security.git@v0.1.0"`。这里的安装来源是 **GitHub**，不是同名 PyPI 包。首次下载需要网络，此后检测离线可用。
+
+## 专用检测器对照：未用于调参的中文公开样本
+
+固定 v0.1.0，对同一批网上取得的 455 条原文，与支持中文的 **HikmaAI mDeBERTa** 配对盲评。主测 52 份企业文档：17 条提示注入中，PyJev 漏 3 条、HikmaAI 漏 0 条；35 条正常文档中，两者分别误报 17 条和 24 条。单看 16 条正常风险讨论或提示词引用，PyJev 误报 10 条，HikmaAI 误报 6 条。**更少报错不等于更少漏检，结论也会随文本类型改变。** 来源是第三方合成文档与人工编写的场景，不是客户线上流量。
+
+![两个固定检测器在企业文档、中文短问和场景叙述上的漏报与误报](docs/figures/enterprise-errors.svg)
+
+[完整报告与误报配对图](docs/enterprise-blind.md) · [预注册与复现](research/enterprise/README.md) · [聚合计分 JSON](research/enterprise/results.json)
 
 ## 原版 PyBot 对照
 
