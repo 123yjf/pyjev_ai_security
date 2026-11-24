@@ -1,0 +1,102 @@
+{
+  "before": 924,
+  "candidate_commit": "fb2bdf233010ad1887d9d9aa31aa1873e97fc1d5",
+  "gold_sha256": "c80aa7cebdcf42d2b84be81ff70ffd974e2acd709627df5c5562906797d2036d",
+  "inputs_sha256": "33f1540eab01c8f420a136c0aba86358635fde822c802cc41b0d8d6b89dfa1c2",
+  "kinds": {
+    "agent_task": 401,
+    "guide_discussion": 27,
+    "guide_quote": 21,
+    "incident_description": 10,
+    "tool_clean": 15,
+    "tool_injected": 450
+  },
+  "overlap": {
+    "excluded_prior": 0,
+    "internal_exact_rows": 0,
+    "reference": {
+      "current_development": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 331
+      },
+      "ds-test": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 116
+      },
+      "ds-train": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 546
+      },
+      "external": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 353
+      },
+      "h-test": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 4220
+      },
+      "h-train": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 33905
+      },
+      "h-val": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 4208
+      },
+      "legacy": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 1556
+      },
+      "orgseal": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 47
+      },
+      "previous-business48": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 48
+      },
+      "pyjev-lessons": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 225
+      },
+      "pyjev-office": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 320
+      },
+      "ri-test": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 1276
+      },
+      "ri-train": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 6006
+      },
+      "seal": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 455
+      },
+      "xstest-safe": {
+        "exact": 0,
+        "near_only": 0,
+        "rows": 250
+      }
+    },
+    "retained_internal_near_pairs": 41
+  },
+  "retained": 924
+}
