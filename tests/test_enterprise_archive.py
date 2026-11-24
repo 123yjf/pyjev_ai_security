@@ -52,3 +52,26 @@ class EnterpriseArchive(unittest.TestCase):
                 e=group["modes"][mode]["fp"]
                 cells.append(f"{e}/{d}（{100*e/d:.1f}%）")
             self.assertIn(" | ".join(cells),report)
+
+    def test_separate_real_negative_controls(self):
+        result=json.loads((HERE/"org-results.json").read_text())
+        seal=json.loads((HERE/"org-cohort.json").read_text())
+        self.assertEqual(result["receipt"],json.loads((HERE/"org-prediction-receipt.json").read_text()))
+        self.assertEqual(result["receipt"]["inputs_sha256"],seal["inputs_sha256"])
+        self.assertEqual(seal["rows"],47)
+        self.assertEqual(seal["overlap"]["reference"]["earlier455"]["rows"],455)
+        self.assertEqual(seal["overlap"]["excluded_prior"],0)
+        g=result["groups"]
+        for k,row in g.items():
+            self.assertEqual(row["positive"],0)
+            for mode,d in row["modes"].items():
+                self.assertEqual(row["n"],d["fp"]+d["tn"])
+                self.assertFalse(d["missing_neg"])
+                if k=="all":
+                    self.assertEqual(d["fp"],sum(g[s]["modes"][mode]["fp"] for s in ("antd","tdesign")))
+        self.assertEqual(g["all"]["modes"]["pyjev"]["fp"],1)
+        self.assertEqual(g["all"]["modes"]["hikma_050"]["fp"],47)
+        report=(HERE.parents[1]/"docs"/"enterprise-blind.md").read_text()
+        for k in ("antd","tdesign"):
+            n=g[k]["n"]; a=g[k]["modes"]["pyjev"]["fp"];b=g[k]["modes"]["hikma_050"]["fp"]
+            self.assertIn(f"| {n} | {a}/{n} | {b}/{n} |",report)

@@ -33,7 +33,9 @@ uvx --from "git+https://github.com/123yjf/pyjev_ai_security.git@v0.1.0" pyjev de
 
 ![两个固定检测器在企业文档、中文短问和场景叙述上的漏报与误报](docs/figures/enterprise-errors.svg)
 
-[完整报告与误报配对图](docs/enterprise-blind.md) · [预注册与复现](research/enterprise/README.md) · [聚合计分 JSON](research/enterprise/results.json)
+另用 **47 条真实公开的软件变更记录**单独测误报：PyJev 误报 1 条，HikmaAI 误报 47 条。它们来自 Ant Design 和腾讯 TDesign 两个项目，不含注入，不能据此比较召回。
+
+[完整报告与误报配对图](docs/enterprise-blind.md) · [预注册与复现](research/enterprise/README.md) · [主盲评聚合计分](research/enterprise/results.json) · [真实发布记录计分](research/enterprise/org-results.json)
 
 ## 原版 PyBot 对照
 

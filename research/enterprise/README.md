@@ -28,6 +28,15 @@ For the two vector figures only, install Matplotlib (original: 3.11.2) and a sup
 
 ## Provenance and licenses
 
+A separately preregistered **natural-text, negative-only supplement** tests real, publicly issued Chinese release notes (not private customer records). See the [sampling protocol and two first-party MIT sources](SUPPLEMENT.md), [separate cohort](org-cohort.json), [pre-scoring prediction receipt](org-prediction-receipt.json) and [counts](org-results.json). With the same temporary directory and the primary inputs already prepared:
+
+~~~sh
+"$work/env/bin/python" -m research.enterprise.supplement fetch --out "$work/artifacts"
+"$work/env/bin/python" -m research.enterprise.supplement prepare --data "$work/artifacts" --primary-inputs "$work/seal/inputs.jsonl" --out "$work/org-seal"
+"$work/env/bin/python" -m research.enterprise.supplement infer --data "$work/artifacts" --inputs "$work/org-seal/inputs.jsonl" --out "$work/org-run"
+"$work/env/bin/python" -m research.enterprise.supplement score --gold "$work/org-seal/gold.jsonl" --predictions "$work/org-run/predictions.jsonl" --receipt "$work/org-run/org-prediction-receipt.json" --out "$work/org-scores.json"
+~~~
+
 - Horizon-Labs: [prompt-injection-eval-suite](https://huggingface.co/datasets/Horizon-Labs/prompt-injection-eval-suite/blob/d6dd8d499d0087661afd6cd7ecdfcf94a5af1c05/README.md); **only** its Apache-2.0 `synthetic_docs_test` and `synthetic_direct_test` configurations were used as test data. External generated business and general examples, not user traffic.
 - uninhibited-scholar: [agent-safety-bench-zh](https://github.com/uninhibited-scholar/agent-safety-bench-zh/tree/d38c7533685a1b02061b7a2354d5796cae05ce2b), [CC BY 4.0](https://github.com/uninhibited-scholar/agent-safety-bench-zh/blob/d38c7533685a1b02061b7a2354d5796cae05ce2b/LICENSE). Author-written role/scenario data; our derived task uses only its unmodified context string and a binary mapping of two categories.
 - HikmaAI: [multilingual mDeBERTa-v3-base model card](https://huggingface.co/HikmaAI/hikmaai-mdeberta-v3-base-prompt-injection/blob/b7d8317a617012d23713f4999acaba0690bc1c73/README.md), [published data portion](https://huggingface.co/HikmaAI/hikmaai-mdeberta-v3-base-prompt-injection/blob/b7d8317a617012d23713f4999acaba0690bc1c73/data/dataset_card.md). No weights are redistributed. Generative PyBot has no native binary labels in the [older control](../../docs/comparison.md); it is not counted as a benign detector here.

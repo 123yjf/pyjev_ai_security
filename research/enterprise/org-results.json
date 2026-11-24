@@ -1,0 +1,175 @@
+{
+  "groups": {
+    "all": {
+      "modes": {
+        "hikma_0005": {
+          "fn": 0,
+          "fp": 47,
+          "missing_neg": 0,
+          "missing_pos": 0,
+          "tn": 0,
+          "tp": 0
+        },
+        "hikma_050": {
+          "fn": 0,
+          "fp": 47,
+          "missing_neg": 0,
+          "missing_pos": 0,
+          "tn": 0,
+          "tp": 0
+        },
+        "pyjev": {
+          "fn": 0,
+          "fp": 1,
+          "missing_neg": 0,
+          "missing_pos": 0,
+          "tn": 46,
+          "tp": 0
+        },
+        "pyjev_shadow": {
+          "fn": 0,
+          "fp": 1,
+          "missing_neg": 0,
+          "missing_pos": 0,
+          "tn": 46,
+          "tp": 0
+        }
+      },
+      "n": 47,
+      "negative": 47,
+      "paired": {
+        "negative": {
+          "both_wrong": 1,
+          "incomplete": 0,
+          "neither_wrong": 0,
+          "only_hikma_wrong": 46,
+          "only_pyjev_wrong": 0
+        },
+        "positive": {
+          "both_wrong": 0,
+          "incomplete": 0,
+          "neither_wrong": 0,
+          "only_hikma_wrong": 0,
+          "only_pyjev_wrong": 0
+        }
+      },
+      "positive": 0
+    },
+    "antd": {
+      "modes": {
+        "hikma_0005": {
+          "fn": 0,
+          "fp": 24,
+          "missing_neg": 0,
+          "missing_pos": 0,
+          "tn": 0,
+          "tp": 0
+        },
+        "hikma_050": {
+          "fn": 0,
+          "fp": 24,
+          "missing_neg": 0,
+          "missing_pos": 0,
+          "tn": 0,
+          "tp": 0
+        },
+        "pyjev": {
+          "fn": 0,
+          "fp": 1,
+          "missing_neg": 0,
+          "missing_pos": 0,
+          "tn": 23,
+          "tp": 0
+        },
+        "pyjev_shadow": {
+          "fn": 0,
+          "fp": 1,
+          "missing_neg": 0,
+          "missing_pos": 0,
+          "tn": 23,
+          "tp": 0
+        }
+      },
+      "n": 24,
+      "negative": 24,
+      "paired": {
+        "negative": {
+          "both_wrong": 1,
+          "incomplete": 0,
+          "neither_wrong": 0,
+          "only_hikma_wrong": 23,
+          "only_pyjev_wrong": 0
+        },
+        "positive": {
+          "both_wrong": 0,
+          "incomplete": 0,
+          "neither_wrong": 0,
+          "only_hikma_wrong": 0,
+          "only_pyjev_wrong": 0
+        }
+      },
+      "positive": 0
+    },
+    "tdesign": {
+      "modes": {
+        "hikma_0005": {
+          "fn": 0,
+          "fp": 23,
+          "missing_neg": 0,
+          "missing_pos": 0,
+          "tn": 0,
+          "tp": 0
+        },
+        "hikma_050": {
+          "fn": 0,
+          "fp": 23,
+          "missing_neg": 0,
+          "missing_pos": 0,
+          "tn": 0,
+          "tp": 0
+        },
+        "pyjev": {
+          "fn": 0,
+          "fp": 0,
+          "missing_neg": 0,
+          "missing_pos": 0,
+          "tn": 23,
+          "tp": 0
+        },
+        "pyjev_shadow": {
+          "fn": 0,
+          "fp": 0,
+          "missing_neg": 0,
+          "missing_pos": 0,
+          "tn": 23,
+          "tp": 0
+        }
+      },
+      "n": 23,
+      "negative": 23,
+      "paired": {
+        "negative": {
+          "both_wrong": 0,
+          "incomplete": 0,
+          "neither_wrong": 0,
+          "only_hikma_wrong": 23,
+          "only_pyjev_wrong": 0
+        },
+        "positive": {
+          "both_wrong": 0,
+          "incomplete": 0,
+          "neither_wrong": 0,
+          "only_hikma_wrong": 0,
+          "only_pyjev_wrong": 0
+        }
+      },
+      "positive": 0
+    }
+  },
+  "receipt": {
+    "inputs_sha256": "37b4929e8fcbd7bb6692a24b723904d87f17e68f8a1c4dc8fe28cad1d3a887f5",
+    "predictions_sha256": "c6bd636f7aab282c1d06256d3a3501d4d7642c2a233df080f7fd004bccebd82f",
+    "rows": 47,
+    "windows": 47
+  }
+}
