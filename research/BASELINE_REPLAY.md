@@ -3,7 +3,7 @@
 Default PyJev inference does not require Git, Docker, NumPy or network access. This page is for reproducing the **additional external comparator**, not for using PyJev. Run the commands from a checkout of this project.
 
 1. Obtain a clean checkout of [huggingface/pybot at the fixed commit](https://github.com/huggingface/pybot/tree/7d63c7fbebb44c7e466e5c8b5c1f341ab767929e) and the [two pinned JSONL files](README.md). Keep them outside this repository. The comparison checks the full model-source fingerprint and both dataset hashes. Do not use production/customer data or run code from a dataset.
-2. Use a trusted **local** Docker daemon with at least 4 GiB available to the container. Pull the official pinned Python image in advance. Inference then uses no network and does not mount your home, SSH credentials or Docker socket. Only the project modules, upstream source and pinned corpus files are mounted read-only.
+2. Use a trusted **local** Docker daemon with at least 4 GiB available to the container. Pull the official pinned Python image in advance. Inference then uses no network and does not mount your home, SSH credentials or Docker socket. The registered protocol bytes are mounted at the adapter's original read-only path; the English reading copy is not used for hashing. Only the project modules, upstream source and pinned corpus files are mounted read-only.
 3. Run task-directed and verbatim conditions separately. The wrapper requires new output filenames. Original free-form replies are not saved or printed.
 
 ~~~bash

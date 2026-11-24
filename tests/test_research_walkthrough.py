@@ -6,8 +6,8 @@ import subprocess
 import tempfile
 import unittest
 
-from candidates.scope1 import ScopeAuditor
-from examples.audit_zh import explain
+from pyjev_v1 import Auditor as V1Auditor
+from pyjev_v1.explain import explain_en
 from pyjev import Auditor
 from research.footprint.measure import percentile
 
@@ -27,31 +27,29 @@ class ResearchWalkthroughTests(unittest.TestCase):
             self.assertIn(b"never overwritten", cp.stderr)
             self.assertEqual(list(Path(directory).iterdir()), [])
 
-    def test_documented_examples_are_the_two_native_results(self):
-        base, candidate = Auditor(), ScopeAuditor()
+    def test_documented_examples_are_actual_english_results(self):
+        detector = V1Auditor()
         rows = artifact("examples/audit-output.json")
-        self.assertEqual([x["id"] for x in rows], ["explain", "act", "reported_incident", "blank"])
+        self.assertEqual([x["id"] for x in rows], ["mention_example", "ordinary_task", "quoted_instruction", "direct_override", "blank"])
         guide = (ROOT / "docs/start-local.md").read_text(encoding="utf8")
         for row in rows:
             with self.subTest(id=row["id"]):
-                self.assertEqual(row["v010"], base.audit(row["text"]).as_dict())
-                self.assertEqual(row["scope1"], candidate.audit(row["text"]).as_dict())
-                for name in ("v010", "scope1"):
-                    lines = explain(row[name]).splitlines()
-                    self.assertEqual([s.split("：", 1)[0] for s in lines], ["文字意图", "注入线索", "复核建议", "实际动作"])
-                    if row["text"].strip():
-                        self.assertNotIn(row["text"], "\n".join(lines))
-        case = rows[2]["scope1"]
-        self.assertIn(explain(case), guide)
-        self.assertEqual(json.loads(re.search(r"~~~json\n(.*?)\n~~~", guide, re.S).group(1)), case)
-        self.assertIsNone(rows[3]["scope1"]["needs_review"])
+                self.assertTrue(row["text"].isascii())
+                self.assertEqual(row["pyjev_v1"], detector.audit(row["text"]).as_dict())
+                if row["text"].strip():
+                    self.assertIn(row["text"], guide)
+                self.assertEqual([s.split(":",1)[0] for s in explain_en(row["pyjev_v1"]).splitlines()], ["Intent", "Signal", "Review", "Action"])
+        sample = rows[3]["pyjev_v1"]
+        self.assertIn(explain_en(sample), guide)
+        self.assertEqual(json.loads(re.search(r"~~~json\n(.*?)\n~~~", guide, re.S).group(1)), sample)
+        self.assertIsNone(rows[-1]["pyjev_v1"]["needs_review"])
 
     def test_resource_table_matches_frozen_measurements(self):
         data = artifact("research/footprint/observed-m4.json")
         article = (ROOT / "docs/audit-study.md").read_text(encoding="utf8")
         self.assertEqual(data["unique_inputs"], 924)
         self.assertEqual(data["fresh_processes"], 9)
-        for key, label in (("v010", "PyJev v0.1.0"), ("scope", "Scope-1"), ("hikma", "HikmaAI INT8／CPU")):
+        for key, label in (("scope", "pyjev_v1"), ("hikma", "HikmaAI INT8 / CPU")):
             d = data["engines"][key]
             self.assertEqual([x["n"] for x in d["rounds"]], [924] * 3)
             self.assertEqual(d["timed"], 3 * 924)

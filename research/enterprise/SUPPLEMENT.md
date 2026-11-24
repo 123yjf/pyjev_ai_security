@@ -1,9 +1,7 @@
-# 独立补充：真实公开的中文软件发布记录（只测误报）
+# Supplement: false alarms on public software release notes
 
-**登记顺序。** 本补充是在主盲评的 455 条数据**已经揭盲后**提出的，不能说它与主盲评一起预注册。两套检测器、工作点、分窗、运行环境保持原样；先锁定本补充的文本和算法，再运行预测。不用它调模型，不与前一组池化。
+This study was registered **after** the 455-text main study was unblinded. The detectors, thresholds, token windows and runtime were held fixed; the supplement was sealed before its own inference. It is not a new positive-class test.
 
-**语料。** 两个公开软件项目的原版中文变更日志：[Ant Design](https://github.com/ant-design/ant-design/blob/3bf122d3e161717ad74f846c8b24a12705cf2cc9/CHANGELOG.zh-CN.md)（[MIT](https://github.com/ant-design/ant-design/blob/3bf122d3e161717ad74f846c8b24a12705cf2cc9/LICENSE)）与[腾讯 TDesign Vue Next](https://github.com/Tencent/tdesign-vue-next/blob/b4e761f6599c11ca5565fe58a7bad3f08c4d51b9/packages/tdesign-vue-next/CHANGELOG.md)（[MIT](https://github.com/Tencent/tdesign-vue-next/blob/b4e761f6599c11ca5565fe58a7bad3f08c4d51b9/LICENSE)）。它们是真实项目公开发表的业务技术文字，不是企业私有聊天、真实客户攻击或第三方生成的模拟试题。只公开汇总和可复现代码，原文留在发布方。
+The sources were public Chinese changelogs from [Ant Design](https://github.com/ant-design/ant-design/blob/3bf122d3e161717ad74f846c8b24a12705cf2cc9/CHANGELOG.zh-CN.md) and [TDesign Vue Next](https://github.com/Tencent/tdesign-vue-next/blob/b4e761f6599c11ca5565fe58a7bad3f08c4d51b9/packages/tdesign-vue-next/CHANGELOG.md), both MIT-licensed. In each project, select the first and last eligible bullet from each of the 12 most recent qualifying releases between May 1 and November 17, 2026; retain punctuation and code as text. Eligibility required at least eight Chinese characters. Preserve a singleton only once. The projects contributed 24 and 23 entries.
 
-**取样不看预测。** 固定两份文件校验值，在 2026-05-01 至 2026-11-17 的正式语义化版本中，按日志原顺序每项目取最近 12 个有合格条目的版本；每版选第一与最后一条至少含 8 个汉字的 Markdown 列表原始行，仅有一条时只取一次。保留原始行中的标点、链接和内联代码（纯文本输入，不访问链接）。两库分别贡献 24、23 条。事前核阅这些条目的用途为功能变更或故障修复记录，没有要求当前助手越权的注入任务。它不是攻击/正常均衡集：两边不知道具体条目答案，但设计者知道整组是正常对照，**只能估计这批文字的误报数，不能评估召回**。两个项目均为前端组件库，不宜外推其他行业、语言或私有客服对话。
-
-与此前 53,029 条公开/历史参考记录及主盲评 455 条按同一标准排查重复；证据见 [补充题本封条](org-cohort.json)。模型只接收 ID 与原文；按 [同一输出约定](PROTOCOL.md)提交两种阈值与影子策略，保留逐条预测校验值、汇总两库单独 FP/TN。待汇总后仍不发布逐条错题清单。
+These are real published maintenance notes, not private enterprise messages. The set contains no attack cases; it supports false-alarm counts only. Check normalized duplicates against the pre-existing 53,029 references and the 455 main texts. [Supplement seal](org-cohort.json) · [Historical findings](../../docs/enterprise-blind.md)

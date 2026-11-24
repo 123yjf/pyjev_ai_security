@@ -30,7 +30,7 @@ class ReleaseEvidence(unittest.TestCase):
 
     def test_receipts_and_counts(self):
         d=measured()
-        for name,protocol,script in (("pybot-comparison.json","PYBOT_PROTOCOL.md","compare_pybot.py"),
+        for name,protocol,script in (("pybot-comparison.json","fixtures/pybot-protocol-registered.utf8","compare_pybot.py"),
                                      ("pybot-raw-control.json","PYBOT_RAW_CONTROL.md","raw_control.py")):
             obj=_read(name)
             for k,f in (("protocol_sha256",protocol),("adapter_sha256",script)):
@@ -65,12 +65,10 @@ class ReleaseEvidence(unittest.TestCase):
                 for col,x in controls[s][method].items():self.assertEqual(x,source[k][col])
 
     def test_figures_are_static_vectors_and_referenced(self):
-        readme=(ROOT/"README.md").read_text()
+        report=(ROOT/"docs/comparison.md").read_text()
         for name in ("baselines","intent","false-reviews","detection"):
             rel="docs/figures/"+name+".svg"
-            if name=="detection":
-                self.assertIn("figures/detection.svg",(ROOT/"docs/comparison.md").read_text())
-            else:self.assertIn(rel,readme)
+            self.assertIn("figures/"+name+".svg",report)
             tree=ET.parse(ROOT/rel)
             self.assertFalse(any(el.tag.rsplit("}",1)[-1] in {"image","script","foreignObject"} for el in tree.iter()))
 
@@ -80,6 +78,30 @@ class ReleaseEvidence(unittest.TestCase):
             for target in re.findall(r"\]\(([^#\s)]+?)(?:#[^)]*)?\)",file.read_text()):
                 if target.startswith(("https:","http:","mailto:")):continue
                 self.assertTrue((file.parent/target).is_file(),(file.name,target))
+
+    def test_replay_uses_the_exact_registered_protocol_at_the_expected_path(self):
+        # Do not hash a later reading copy as if it were the preregistration.
+        from unittest.mock import patch
+        from pathlib import Path as P
+        import tempfile
+        from research import run_original as runner
+        from types import SimpleNamespace
+        with tempfile.TemporaryDirectory() as temp:
+            p = P(temp); data=p/"input"; data.write_bytes(b"fixture")
+            expected=(runner.digest(b"fixture"), len(b"fixture"))
+            got=[]
+            def no_docker(cmd, **kwargs):
+                got.extend(cmd)
+                return SimpleNamespace(returncode=17,stdout=b"")
+            with patch.dict(runner.os.environ,{"DOCKER_HOST":"unix:///test-only.sock"}), \
+                 patch.dict(runner.SOURCES, {"external":expected,"legacy":expected}), \
+                 patch.object(runner.subprocess,"check_output",return_value=runner.REV+"\n"), \
+                 patch.object(runner.subprocess,"run",side_effect=no_docker):
+                self.assertEqual(runner.main(["--upstream",temp,"--external",str(data),"--legacy",str(data),"--out",str(p/"result")]),17)
+            mapping=next(x for x in got if "pybot-protocol-registered.utf8" in x)
+            self.assertIn("/app/research/PYBOT_PROTOCOL.md", mapping)
+            self.assertIn("ro",mapping)
+            self.assertFalse((p/"result").exists())
 
     def test_cli_compare_is_frozen_report(self):
         from pyjev.cli import main

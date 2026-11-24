@@ -1,8 +1,10 @@
-# Scope-1: prospective Chinese agent and discourse audit
+# pyjev_v1: prospective Chinese agent and discourse audit
 
 Development, regression, blind input/label freeze, label-free inference, then an aggregate join. Do not tune after candidate lock. No customer data, gateways, model APIs, agent environments or tools are invoked. “Execution request” is a linguistic category, not proof of authorization, execution or abuse.
 
-**Systems/operating points.** Frozen PyJev v0.1.0 (b0d755f) default review; opt-in scope-1 review or case_review (real reviewer workload, not the monotonic raw evidence bit); same HikmaAI CPU ONNX b7d8317, class 1 ≥ 0.5, max over 510-token windows with 64 overlap. Show 0.005 sensitivity separately, never choose a cutoff to win this set. Report abstentions, do not silently turn them into negatives. Scope reports are not active commands; secondary active-only operating point counts review only. Hikma has no mention/act label; do not fabricate one.
+[Originally registered protocol and detector](https://github.com/123yjf/pyjev_ai_security/tree/fb2bdf233010ad1887d9d9aa31aa1873e97fc1d5). The public model name is `pyjev_v1`; frozen evidence keys such as `scope` are unchanged.
+
+**Systems/operating points.** The research receipts include a compatibility run (b0d755f). The current comparison uses pyjev_v1 review or case_review (real reviewer workload, not the monotonic raw evidence bit); same HikmaAI CPU ONNX b7d8317, class 1 ≥ 0.5, max over 510-token windows with 64 overlap. Show 0.005 sensitivity separately, never choose a cutoff to win this set. Report abstentions, do not silently turn them into negatives. Reports about an event are not active commands; secondary active-only operating point counts review only. Hikma has no mention/act label; do not fabricate one.
 
 **Development only.** Previously unused Horizon synthetic_v2 Chinese slice, four Chinese Dify professional manuals, nine OWASP LLM01 case descriptions. An initial broad de-escalation lost 15 previously detected development positives and was rejected; use narrow scope and evidence attribution. No official training-set access beyond the published files. Pinned inputs: [catalog](sources.json).
 

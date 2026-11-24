@@ -1,12 +1,14 @@
 include README.md README.en.md MODEL_CARD.md LICENSE NOTICE CONTRIBUTING.md SECURITY.md CITATION.cff
 recursive-include docs *.md
-include docs/audit.schema.json
+include docs/audit.schema.json docs/pyjev_v1.html
+include docs/tables/audit-errors.svg docs/tables/intent-accuracy.svg
 include docs/figures/baselines.svg docs/figures/detection.svg docs/figures/intent.svg docs/figures/false-reviews.svg
 recursive-include research *.py *.md
-include research/calibration.json research/signal-controls.json
+include research/calibration.json research/signal-controls.json research/fixtures/pybot-protocol-registered.utf8
 recursive-include examples *.py
-include examples/office.jsonl
+include examples/office.jsonl examples/audit-output.json
 recursive-include tests *.py
+include tests/fixtures/discourse-regression.json
 prune research/private_data
 prune research/outputs
 global-exclude *.py[cod] .DS_Store

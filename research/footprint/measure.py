@@ -53,8 +53,8 @@ def load_engine(engine, models):
             return None if r == "incomplete" else r == "review"
         return decide
     if engine == "scope":
-        from candidates.scope1 import ScopeAuditor
-        a = ScopeAuditor()
+        from pyjev_v1 import Auditor as V1Auditor
+        a = V1Auditor()
         return lambda text: a.audit(text).needs_review
     raise ValueError("unknown engine")
 

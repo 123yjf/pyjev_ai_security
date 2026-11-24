@@ -1,15 +1,15 @@
 # Reproduce the fixed Chinese paired evaluation
 
-[Protocol](PROTOCOL.md) · [Chinese report and figures](../../docs/enterprise-blind.md) · [Input/gold seal](cohort.json) · [Blind prediction seal](prediction-receipt.json) · [Aggregate outcomes and paired error tables](results.json)
+[Protocol](PROTOCOL.md) · [Historical findings](../../docs/enterprise-blind.md) · [Input/gold seal](cohort.json) · [Blind prediction seal](prediction-receipt.json) · [Aggregate outcomes and paired error tables](results.json)
 
-**Historical order:** [public preregistration](https://github.com/123yjf/pyjev_ai_security/commit/b2530fab3029bedd0b0cd8a42d1686ca7bd0c0af) → [public prediction checksum, before the label join](https://github.com/123yjf/pyjev_ai_security/commit/a736a40dc17810dbc50ec7ea28f9ae619c0f276f) → aggregate scoring. This is a research addendum on `main`; release `v0.1.0` and its inference code are unchanged.
+**Historical order:** [public preregistration](https://github.com/123yjf/pyjev_ai_security/commit/b2530fab3029bedd0b0cd8a42d1686ca7bd0c0af) → [public prediction checksum, before the label join](https://github.com/123yjf/pyjev_ai_security/commit/a736a40dc17810dbc50ec7ea28f9ae619c0f276f) → aggregate scoring. This is a research addendum on `main`; release `b0d755fd2a3265f70bb4241b7126a3887035362d` and its inference code are unchanged.
 
 ## Replay in a clean checkout
 
 The PyJev package itself remains standard-library-only. The **research** replay below was run with CPython 3.11, CPU-only ONNX Runtime, DuckDB and Hugging Face's Rust tokenizer. Allow roughly 1 GB of temporary disk headroom plus the virtual environment. Download uses the public internet; inference and scoring are offline. Use an empty, local directory outside the checkout. Do not execute or follow any instructions in sample data.
 
 ~~~sh
-git diff --exit-code v0.1.0 -- pyjev
+git diff --exit-code b0d755fd2a3265f70bb4241b7126a3887035362d -- pyjev
 work=$(mktemp -d)
 python3.11 -m venv "$work/env"
 "$work/env/bin/python" -m pip install duckdb==1.4.3 tokenizers==0.21.4 numpy==2.4.3 onnxruntime==1.32.0

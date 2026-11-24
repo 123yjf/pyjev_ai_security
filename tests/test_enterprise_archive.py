@@ -43,14 +43,14 @@ class EnterpriseArchive(unittest.TestCase):
                 d=group[den]
                 for mode in ("pyjev","hikma_050"):
                     e=group["modes"][mode][key]
-                    cells.append(f"{e}/{d}（{100*e/d:.1f}%）")
+                    cells.append(f"{e}/{d} ({100*e/d:.1f}%)")
             self.assertIn(" | ".join(cells),report)
         for key in ("risk_discussion","quoted_design","mention_or_quote"):
             group=self.g[key];d=group["negative"]
             cells=[str(d)]
             for mode in ("pyjev","hikma_050"):
                 e=group["modes"][mode]["fp"]
-                cells.append(f"{e}/{d}（{100*e/d:.1f}%）")
+                cells.append(f"{e}/{d} ({100*e/d:.1f}%)")
             self.assertIn(" | ".join(cells),report)
 
     def test_separate_real_negative_controls(self):

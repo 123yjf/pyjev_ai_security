@@ -34,7 +34,7 @@ def setup(lang,fmt="svg",family=None):
         "axes.labelsize":10,"xtick.labelsize":9,"ytick.labelsize":9,"axes.unicode_minus":False,
         "svg.fonttype":"path","svg.hashsalt":"pyjev-research-0.1.0","pdf.fonttype":42})
 
-def make(lang="zh",fmt="svg",family=None):
+def make(lang="en",fmt="svg",family=None):
     setup(lang,fmt,family);zh=lang=="zh";r=_read("results.json")
     l=("mention","act","unclear");labels=("讨论 / 引用","要求落实","不确定") if zh else ("Mention","Request to act","Unclear")
     matrix=r["new_paired"]["confusion_truth_then_predicted"];n=np.array([[matrix[g][p] for p in l] for g in l])
@@ -79,7 +79,7 @@ def make(lang="zh",fmt="svg",family=None):
     return {"intent":fig,"false-reviews":fig2}
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument("--lang",choices=("zh","en"),default="zh")
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument("--lang",choices=("zh","en"),default="en")
     p.add_argument("--format",choices=("svg","pdf","png"),default="svg",help="vector SVG/PDF or a 300-dpi PNG")
     p.add_argument("--font",help="optional installed font family; CJK PDF requires TrueType outlines")
     p.add_argument("--out",type=Path,default=Path("docs/figures"));a=p.parse_args();a.out.mkdir(parents=True,exist_ok=True)

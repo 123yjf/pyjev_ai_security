@@ -13,7 +13,7 @@ from research.figures import setup
 from .common import HERE
 
 INK="#193340"; MUTED="#485F69"; GRID="#D8E2E4"
-SYSTEMS=(("pyjev","PyJev v0.1.0","#006B85","o",-.15),
+SYSTEMS=(("pyjev","Historical reference","#006B85","o",-.15),
          ("hikma_050","HikmaAI · INT8 (0.5)","#994526","D",.15))
 
 def write_text(f,x,y,s,size,**kw):
@@ -47,31 +47,31 @@ def dots(f, pos, groups, data, typ):
     return fy
 def outcome_figure(data):
     f=plt.figure(figsize=(9.25,5.12),layout=None)
-    header(f,"中文提示注入检测：漏报与误报","同一条原文，分别由两个冻结的检测器判读。横轴越靠左，错误率越低。")
+    header(f,"Historical study: misses and false alarms","Both systems saw the same text. Lower error rates are better.")
     legend(f)
     groups=("business_docs","docs","direct","agent")
-    labels=("企业文档（主测）","全部中文文档","中文短问","Agent 场景叙述")
+    labels=("Business documents","All documents","Direct questions","Agent narratives")
     weight=plt.rcParams["axes.titleweight"]
-    write_text(f,.213,.688,"a   漏报率",11.5,weight=weight)
-    write_text(f,.610,.688,"b   误报率",11.5,weight=weight)
-    write_text(f,.484,.688,"漏报/注入",8,color=MUTED)
-    write_text(f,.881,.688,"误报/正常",8,color=MUTED)
+    write_text(f,.213,.688,"a   Miss rate",11.5,weight=weight)
+    write_text(f,.610,.688,"b   False-alarm rate",11.5,weight=weight)
+    write_text(f,.484,.688,"Misses / pos.",8,color=MUTED)
+    write_text(f,.881,.688,"FP / neg.",8,color=MUTED)
     fy=dots(f,[.213,.189,.259,.443],groups,data,"fn")
     dots(f,[.610,.189,.259,.443],groups,data,"fp")
     for j,label in enumerate(labels):
         write_text(f,.030,fy(j),label,9.5,weight=weight if j==0 else "normal")
-    write_text(f,.03,.074,"企业文档是全部文档的子集，不能相加；Agent 组按场景来源标签计分，不是工具执行测试。",8.1,color=MUTED)
+    write_text(f,.03,.074,"Business documents are a subset. Narrative labels do not establish tool execution.",8.1,color=MUTED)
     return f
 def intention_figure(data):
     f=plt.figure(figsize=(9.25,4.95),layout=None)
-    header(f,"讨论与引用：哪些正常文本被误报？","16 条正常文本分成两个互斥子组；右侧按同一条文本交叉计数。")
+    header(f,"Historical study: false alarms on benign text","Sixteen discussions and quotations; the right panel compares decisions on the same text.")
     legend(f)
     weight=plt.rcParams["axes.titleweight"]
-    write_text(f,.03,.672,"a   正常文本误报率",11.5,weight=weight)
-    write_text(f,.617,.672,"b   两个检测器的配对判定",11.5,weight=weight)
+    write_text(f,.03,.672,"a   False-alarm rate",11.5,weight=weight)
+    write_text(f,.617,.672,"b   Paired decisions",11.5,weight=weight)
     gs=("mention_or_quote","risk_discussion","quoted_design")
     fy=dots(f,[.194,.226,.263,.382],gs,data,"fp")
-    for j,lab in enumerate(("全部讨论／引用","讨论风险","引用提示词／配置")):
+    for j,lab in enumerate(("All 16 texts","Risk discussion","Quoted designs")):
         write_text(f,.030,fy(j),lab,9,weight=weight if j==0 else "normal")
     ax=f.add_axes([.647,.213,.288,.332]);ax.set_xlim(0,2);ax.set_ylim(2,0)
     p=data["mention_or_quote"]["paired"]["negative"]
@@ -82,11 +82,11 @@ def intention_figure(data):
             face=plt.get_cmap("Blues")(.045+.71*intensity)
             ax.add_patch(Rectangle((j,i),1,1,facecolor=face,edgecolor="white",lw=1.5))
             ax.text(j+.5,i+.5,str(n),ha="center",va="center",fontsize=15,weight=weight,color="white" if intensity>.8 else INK)
-    ax.set_xticks([.5,1.5],["不报","报"]);ax.xaxis.tick_top()
-    ax.set_yticks([.5,1.5],["不报","报"]);ax.tick_params(length=0,pad=4,labelsize=8)
+    ax.set_xticks([.5,1.5],["No flag","Flag"]);ax.xaxis.tick_top()
+    ax.set_yticks([.5,1.5],["No flag","Flag"]);ax.tick_params(length=0,pad=4,labelsize=8)
     ax.set_ylabel("PyJev",fontsize=9);ax.set_title("HikmaAI",fontsize=9,pad=5,weight="normal")
     for sp in ax.spines.values():sp.set_visible(False)
-    write_text(f,.03,.090,"数值是误报条数/正常条数；有相似模板，不作独立抽样显著性检验。这里的“报”只指检出文本信号。",8,color=MUTED)
+    write_text(f,.03,.090,"Counts are false alarms / benign texts. Shared templates limit inference. Flags are text signals only.",8,color=MUTED)
     return f
 
 def main():
@@ -94,7 +94,7 @@ def main():
     p.add_argument("--results",type=Path,default=HERE/"results.json")
     p.add_argument("--out",type=Path,default=HERE.parents[1]/"docs"/"figures")
     a=p.parse_args();a.out.mkdir(parents=True,exist_ok=True)
-    setup("zh");rows=json.loads(a.results.read_text())["groups"]
+    setup("en");rows=json.loads(a.results.read_text())["groups"]
     for name,maker in (("enterprise-errors",outcome_figure),("enterprise-mention",intention_figure)):
         fig=maker(rows);s=StringIO()
         fig.savefig(s,format="svg",metadata={"Date":None,"Creator":"PyJev AI Security"})

@@ -29,7 +29,9 @@ def main(argv=None):
     command=["docker","run","--rm","--pull","never","--network","none","--read-only","--cap-drop","ALL","--security-opt","no-new-privileges",
              "--user","65534:65534","--pids-limit","80","--memory","3500m","--memory-swap","3500m","--cpus",str(jobs),"--workdir","/app",
              "-e","PYTHONHASHSEED=0","-e","PYTHONDONTWRITEBYTECODE=1","-e","OPENBLAS_NUM_THREADS=1"]
-    for local,mount in ((root/"pyjev","/app/pyjev"),(root/"research","/app/research"),(up/"pybot.py","/upstream/pybot.py"),
+    for local,mount in ((root/"pyjev","/app/pyjev"),(root/"research","/app/research"),
+                        (root/"research/fixtures/pybot-protocol-registered.utf8","/app/research/PYBOT_PROTOCOL.md"),
+                        (up/"pybot.py","/upstream/pybot.py"),
                         (up/"bot","/upstream/bot"),(a.external.resolve(),"/data/external.jsonl"),(a.legacy.resolve(),"/data/legacy.jsonl")):
         if "," in str(local):p.error("mount paths must not contain commas")
         command+=["--mount",f"type=bind,src={local},dst={mount},readonly"]

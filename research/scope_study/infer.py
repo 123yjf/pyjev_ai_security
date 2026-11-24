@@ -6,13 +6,13 @@ from pathlib import Path
 from research.enterprise.infer import Comparator
 from research.enterprise.common import HIKMA,PYJEV,jsonl,save_rows,save_json,filehash
 from pyjev import Auditor
-from candidates.scope1 import ScopeAuditor
+from pyjev_v1 import Auditor as V1Auditor
 from . import __file__ as root_file
 
 def run(data,inputs,out):
     seal=json.loads((Path(root_file).parent/"cohort.json").read_text())
     if filehash(inputs)!=seal["inputs_sha256"]:raise ValueError("unknown inputs")
-    baseline=Auditor();scope=ScopeAuditor();hikma=Comparator(data);rows=[];prev="";windows=0
+    baseline=Auditor();scope=V1Auditor();hikma=Comparator(data);rows=[];prev="";windows=0
     for v in jsonl(inputs):
         if set(v)!={"id","text"} or v["id"]<=prev:raise ValueError("schema or order")
         prev=v["id"];a=baseline.audit(v["text"]);b=scope.audit(v["text"]);p,w,n=hikma.predict(v["text"])

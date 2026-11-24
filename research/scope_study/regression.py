@@ -8,10 +8,10 @@ from pyjev._office import exam
 from research.replay import SOURCES,cohort
 from research.enterprise.common import jsonl,filehash,save_json
 from .score import HERE,binary,checked_join,read
-from candidates.scope1 import ScopeAuditor
+from pyjev_v1 import Auditor as V1Auditor
 
 def run(old,prior,output):
-    candidate=ScopeAuditor();emb,_=_models();out={};frozen=HERE.parent/"enterprise"
+    candidate=V1Auditor();emb,_=_models();out={};frozen=HERE.parent/"enterprise"
     for sub,basepath,pref in [("seal","pred",""),("orgseal","orgpred","org-")]:
         seal=read(frozen/(pref+"cohort.json")); rec=read(frozen/(pref+"prediction-receipt.json"))
         inp=old/sub/"inputs.jsonl"

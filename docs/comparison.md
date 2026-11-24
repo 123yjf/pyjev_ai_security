@@ -1,54 +1,34 @@
-# 原版 PyBot 对照实验
+# Historical control: original PyBot
 
-## 研究问题与观察
+This is an interface comparison, not the current specialist benchmark. Could an unmodified general-purpose chatbot return the labels required for a review queue? The scoring adapter does not infer verdicts from free-form replies.
 
-检验通用对话接口能否直接用于结构化事后审计。对照为[固定提交的 Hugging Face PyBot](https://github.com/huggingface/pybot/tree/7d63c7fbebb44c7e466e5c8b5c1f341ab767929e)，没有改源码、训练分类器或人工重判其自由文本。PyJev 读取自己的显式字段。这里比较的是**任务接口的输出能力**，不是回答质量、安全知识水平或模型真实性。
+The [pinned original implementation](https://github.com/huggingface/pybot/tree/7d63c7fbebb44c7e466e5c8b5c1f341ab767929e) returned scorable labels on **0/2,057** task-prompt inputs and **0/673** verbatim inputs. Texts overlap across these settings; do not add them as unique cases. No label is not a correct negative.
 
-原版 PyBot 在固定分类提示下返回合规标签 **0/2,057**；两个新增评测集不加任务提示、逐字输入原文时为 **0/673**。两个设置共 2,730 次离线单轮调用，均重置状态，可见超时或运行失败合计 43 次。两种设置复用了 673 条文本，不视为额外的独立样本；不同任务不合并计算安全准确率。
-
-![不同接口的标签覆盖率与正确完成率；下表提供等价文本。](figures/baselines.svg)
-
-## 端到端任务结果
-
-| 数据集 | 接口 | 合法标签 / 全部文本 | 正确标签 / 全部文本 | 准确率（仅合法标签） | 非标签 / 超时 / 异常 |
+| Dataset | Interface | Scorable / all | Correct / all | Accuracy among scorable | No label / timeout / error |
 |---|---|---:|---:|---:|---:|
-| 受控办公意图 | PyJev · 原生接口 | 320/320 (100.0%) | 280/320 (87.5%) | 280/320 (87.5%) | 0 / 0 / 0 |
-| 受控办公意图 | 原版 PyBot · 分类提示 | 0/320 (0.0%) | 0/320 (0.0%) | N/A（0 条可评分） | 320 / 0 / 0 |
-| 受控办公意图 | 原版 PyBot · 原文输入 | 0/320 (0.0%) | 0/320 (0.0%) | N/A（0 条可评分） | 320 / 0 / 0 |
-| 外部翻译场景 | PyJev · 原生接口 | 353/353 (100.0%) | 261/353 (73.9%) | 261/353 (73.9%) | 0 / 0 / 0 |
-| 外部翻译场景 | 原版 PyBot · 分类提示 | 0/353 (0.0%) | 0/353 (0.0%) | N/A（0 条可评分） | 353 / 0 / 0 |
-| 外部翻译场景 | 原版 PyBot · 原文输入 | 0/353 (0.0%) | 0/353 (0.0%) | N/A（0 条可评分） | 353 / 0 / 0 |
-| 历史中文文档 | PyJev · 原生接口 | 1,384/1,384 (100.0%) | 882/1,384 (63.7%) | 882/1,384 (63.7%) | 0 / 0 / 0 |
-| 历史中文文档 | 原版 PyBot · 分类提示 | 0/1,384 (0.0%) | 0/1,384 (0.0%) | N/A（0 条可评分） | 1341 / 43 / 0 |
-| 历史中文文档 | 原版 PyBot · 原文输入 | 未测 | 未测 | — | — |
+| Office intent | Historical native interface | 320/320 (100.0%) | 280/320 (87.5%) | 280/320 (87.5%) | 0 / 0 / 0 |
+| Office intent | Original PyBot: prompted | 0/320 (0.0%) | 0/320 (0.0%) | Not scorable | 320 / 0 / 0 |
+| Office intent | Original PyBot: verbatim | 0/320 (0.0%) | 0/320 (0.0%) | Not scorable | 320 / 0 / 0 |
+| Translated scenarios | Historical native interface | 353/353 (100.0%) | 261/353 (73.9%) | 261/353 (73.9%) | 0 / 0 / 0 |
+| Translated scenarios | Original PyBot: prompted | 0/353 (0.0%) | 0/353 (0.0%) | Not scorable | 353 / 0 / 0 |
+| Translated scenarios | Original PyBot: verbatim | 0/353 (0.0%) | 0/353 (0.0%) | Not scorable | 353 / 0 / 0 |
+| Historical Chinese documents | Historical native interface | 1,384/1,384 (100.0%) | 882/1,384 (63.7%) | 882/1,384 (63.7%) | 0 / 0 / 0 |
+| Historical Chinese documents | Original PyBot: prompted | 0/1,384 (0.0%) | 0/1,384 (0.0%) | Not scorable | 1341 / 43 / 0 |
 
-**读法：**结构不合规降低“完成率”，不是一条被证明在语义上错误的回答。`unclear` 是可评分的意图类；没有标签不是 `unclear`。同一批文本适配了不同接口，不能把此表解释为泛化语言理解能力的排名。
+A valid indeterminate intent is a semantic answer. A non-label is not. These known suites were used to compare output contracts, not to establish fresh generalization or safety.
 
-## 注入二分类的条件指标
+## Injection detection and false alarms
 
-![注入检出与正常文本误报：原版 PyBot、双语词项规则与 PyJev 在相同文本上的分项对照；无可评分输出单列。](figures/detection.svg)
-
-| 数据集 | 接口 | 误报 / 可评分正常项 | 检出 / 可评分注入项 |
+| Corpus | Interface | False alarms / scorable negatives | Detections / scorable positives |
 |---|---|---:|---:|
-| 外部翻译场景 | PyJev · 原生接口 | 0/200 (0.0%) | 61/153 (39.9%) |
-| 外部翻译场景 | 原版 PyBot · 分类提示 | N/A（0 条可评分） | N/A（0 条可评分） |
-| 外部翻译场景 | 原版 PyBot · 原文输入 | N/A（0 条可评分） | N/A（0 条可评分） |
-| 历史中文文档 | PyJev · 原生接口 | 5/61 (8.2%) | 826/1,323 (62.4%) |
-| 历史中文文档 | 原版 PyBot · 分类提示 | N/A（0 条可评分） | N/A（0 条可评分） |
+| Translated scenarios | Historical native interface | 0/200 (0.0%) | 61/153 (39.9%) |
+| Translated scenarios | Original PyBot: prompted | Not scorable | Not scorable |
+| Translated scenarios | Original PyBot: verbatim | Not scorable | Not scorable |
+| Historical Chinese documents | Historical native interface | 5/61 (8.2%) | 826/1,323 (62.4%) |
+| Historical Chinese documents | Original PyBot: prompted | Not scorable | Not scorable |
 
-上述分母为空时不是 0% 误报或 0% 召回。PyJev 的二分类列使用保守的 `review`；讨论分流是另一项消融，见[研究主页](../README.md)。
+An empty denominator is unscorable, not zero. These historical native results are not measurements of pyjev_v1.
 
-**类别比例的影响。** 历史中文数据集的注入比例是 1,323/1,384 (95.6%)。即使将所有文本一律送入复核，总体正确率也能达到这一数值，但正常文本将有 61/61 被误报。因此不以跨数据集汇总准确率宣称安全性能提升。
+[Output coverage](figures/baselines.svg) · [Injection detection](figures/detection.svg) · [Intent](figures/intent.svg) · [False reviews](figures/false-reviews.svg)
 
-## 实验控制
-
-- **任务设置**：320 条语用意图文本（120 讨论、120 行动、80 不确定），353 条外部翻译样本（153 注入、200 正常），1,384 条历史中文文档（1,323 注入、61 正常）。两种系统使用同一批文本、相同的参考标注；不根据输出筛选样本。原文设置仅预注册在这两个新增评测集上。
-- **输入差异**：分类提示条件以固定中英双语任务描述包裹原文；同文条件把原文逐字交给原版。PyJev 两者均直接审计原文。PyBot 返回一个原始回复，使用预注册的整段短标签解析器；不从长文本、拒答或转述中猜标签。
-- **隔离**：核对原版 528 个 Python 文件与官方单次 `-p` 的中性样例输出。每个样本使用独立子进程和空记忆，固定种子 20261124 与哈希种子 0。只读取固定资料；无网络、无生产挂载、无外部模型，无原文/自由回复导出。每条原版调用上限 30 秒，无重试。
-- **环境**：Linux 容器，Python 3.11.18 / aarch64。场景为功能比较，不能引用为吞吐、延迟或生产容量测试。
-- **评分前固定**：主协议与评分程序见[提交 8f04bd0](https://github.com/123yjf/pyjev_ai_security/commit/8f04bd0cdff65a28e83ddf99535a4d5f1ac12143)，同文对照见[提交 ff664ee](https://github.com/123yjf/pyjev_ai_security/commit/ff664ee7776935f3b1861b98d37d3a35db80e9fc)。两项均先固定于本地 Git，再计分；不是第三方注册。公开数据按固定摘要验证。使用既有评测集比较接口，不是 PyJev 的独立新盲测。
-
-## 复现与原始计数
-
-- [主实验逐类混淆计数](../pyjev/data/pybot-comparison.json) · [同文对照计数](../pyjev/data/pybot-raw-control.json) · [评分器](../research/compare_pybot.py)。
-- 安装包中 `pyjev compare` **读取**已测结果。要重跑原版，使用[隔离复现步骤](../research/BASELINE_REPLAY.md)；仅查看或复算 PyJev 意图题无需 Docker。
+[Frozen counts](../pyjev/data/pybot-comparison.json) · [Verbatim control](../pyjev/data/pybot-raw-control.json) · [Offline replay](../research/BASELINE_REPLAY.md) · [Current paired study](audit-study.md)

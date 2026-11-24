@@ -3,7 +3,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 import re
 from research.enterprise.prepare import parquet
-from candidates.scope1 import ScopeAuditor
+from pyjev_v1 import Auditor as V1Auditor
 
 def prose(path):
     paragraph=[]; fence=None
@@ -31,7 +31,7 @@ def records(root):
     for block in re.split(r"(?m)^#### 场景 [^\n]+\n",raw)[1:]:
         yield "owasp_cases",1,block.strip().split("\n\n",1)[0].strip()
 def measure(root):
-    m=ScopeAuditor();out=defaultdict(Counter)
+    m=V1Auditor();out=defaultdict(Counter)
     for src,y,t in records(root):
         d=m.audit(t); a=d.original_review=="review";b=d.needs_review
         assert b is not None
